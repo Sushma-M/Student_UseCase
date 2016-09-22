@@ -1,0 +1,64 @@
+<wm-page data-ng-controller="Page2PageController" pagetitle="Page 2" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-livegrid formlayout="dialog" name="livegrid1">
+                <wm-grid gridfirstrowselect="true" editmode="dialog" title="Subjects List" dataset="bind:Variables.SubjectsData.dataSet" navigation="Basic" name="grid1">
+                    <wm-grid-column binding="subjectId" caption="Subject Id" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true"></wm-grid-column>
+                    <wm-grid-column binding="subjectName" caption="Subject Name" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-grid-column>
+                    <wm-grid-action key="addNewRow" display-name="New" iconclass="wi wi-plus" show="true" class="btn-primary" action="addNewRow()" position="footer" shortcutkey=""></wm-grid-action>
+                    <wm-grid-row-action key="updaterow" display-name="" title="Edit" iconclass="wi wi-pencil" show="true" class="btn-transparent" action="editRow()"></wm-grid-row-action>
+                    <wm-grid-row-action key="deleterow" display-name="" title="Delete" iconclass="wi wi-trash" show="true" class="btn-transparent" action="deleteRow()"></wm-grid-row-action>
+                </wm-grid>
+                <wm-liveform novalidate="false" title="Subjects Info" formlayout="dialog" iconclass="wi wi-edit" dataset="bind:Variables.SubjectsData.dataSet" captionalign="left" captionposition="top" name="liveform1">
+                    <wm-layoutgrid columns="2" name="layoutgrid1">
+                        <wm-gridrow name="gridrow1">
+                            <wm-gridcolumn columnwidth="6" name="gridcolumn1">
+                                <wm-form-field name="subjectId" displayname="Subject Id" required="true" show="true" generator="assigned" primary-key="true" key="subjectId" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true"
+                                widget="number"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="6" name="gridcolumn2">
+                                <wm-form-field name="subjectName" displayname="Subject Name" required="false" show="true" generator="assigned" primary-key="false" key="subjectName" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                    <wm-form-action key="cancel" class="form-cancel btn-secondary" iconclass="wi wi-cancel" action="cancel()" display-name="Cancel" show="true" type="button" update-mode="true"></wm-form-action>
+                    <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+                </wm-liveform>
+            </wm-livegrid>
+            <wm-livegrid formlayout="dialog" name="livegrid2">
+                <wm-grid gridfirstrowselect="true" editmode="dialog" title="Academic_subjects List" dataset="bind:Variables.AcademicSubjectsData.dataSet" navigation="Basic" name="grid2">
+                    <wm-grid-column binding="subjectTeacher" caption="Subject Teacher" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-grid-column>
+                    <wm-grid-column binding="academics.academicYear" caption="Academic Year" generator="assigned" pcdisplay="true" mobiledisplay="true" type="date" primary-key="true" related-entity-name="Academics"></wm-grid-column>
+                    <wm-grid-column binding="academics.classRoom" caption="Class Room" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Academics"></wm-grid-column>
+                    <wm-grid-column binding="academics.classTeacher" caption="Class Teacher" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Academics"></wm-grid-column>
+                    <wm-grid-column binding="subjects.subjectId" caption="Subject Id" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true" related-entity-name="Subjects"></wm-grid-column>
+                    <wm-grid-column binding="subjects.subjectName" caption="Subject Name" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Subjects"></wm-grid-column>
+                    <wm-grid-action key="addNewRow" display-name="New" iconclass="wi wi-plus" show="true" class="btn-primary" action="addNewRow()" position="footer" shortcutkey=""></wm-grid-action>
+                    <wm-grid-row-action key="updaterow" display-name="" title="Edit" iconclass="wi wi-pencil" show="true" class="btn-transparent" action="editRow()"></wm-grid-row-action>
+                    <wm-grid-row-action key="deleterow" display-name="" title="Delete" iconclass="wi wi-trash" show="true" class="btn-transparent" action="deleteRow()"></wm-grid-row-action>
+                </wm-grid>
+                <wm-liveform novalidate="false" title="Academic_subjects Info" formlayout="dialog" iconclass="wi wi-edit" dataset="bind:Variables.AcademicSubjectsData.dataSet" captionalign="left" captionposition="top" name="liveform2">
+                    <wm-layoutgrid columns="3" name="layoutgrid2">
+                        <wm-gridrow name="gridrow2">
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn3">
+                                <wm-form-field name="subjectTeacher" displayname="Subject Teacher" show="true" primary-key="false" generator="assigned" key="subjectTeacher" type="string" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn4">
+                                <wm-form-field name="academics" displayname="Academics" show="true" primary-key="true" generator="assigned" key="academics" type="list" is-related="true" required="required" widget="select" placeholder="Select value" displayexpression="academicYear + '  ' + standardDetails.standardId"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn5">
+                                <wm-form-field name="subjects" displayname="Subjects" show="true" primary-key="true" generator="assigned" key="subjects" type="list" is-related="true" required="required" widget="select" placeholder="Select value" displayexpression="subjectId + '  ' + subjectName"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                    <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="wi wi-cancel" title="Cancel" action="cancel()" disabled="false" type="button" update-mode="true"></wm-form-action>
+                    <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" type="submit" update-mode="true"></wm-form-action>
+                </wm-liveform>
+            </wm-livegrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="StudentPortal_DB" type="DataService" springFile="StudentPortal_DB.spring.xml">
+    <dataobjects>
+        <dataobject javaType="com.student_usecase.studentportal_db.AcademicSubjects">
+            <element name="academicTestSubjectses" typeRef="com.student_usecase.studentportal_db.AcademicTestSubjects" isList="true" allowNull="true"/>
+            <element name="academicYear" typeRef="java.util.Date" allowNull="true"/>
+            <element name="academics" typeRef="com.student_usecase.studentportal_db.Academics" allowNull="true"/>
+            <element name="standard" typeRef="java.lang.String" allowNull="true"/>
+            <element name="subjectId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="subjectTeacher" typeRef="java.lang.String" allowNull="true"/>
+            <element name="subjects" typeRef="com.student_usecase.studentportal_db.Subjects" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.student_usecase.studentportal_db.AcademicTestSubjects">
+            <element name="academicSubjects" typeRef="com.student_usecase.studentportal_db.AcademicSubjects" allowNull="true"/>
+            <element name="academicYear" typeRef="java.util.Date" allowNull="true"/>
+            <element name="examConductedOn" typeRef="java.util.Date" allowNull="true"/>
+            <element name="maxMarks" typeRef="java.lang.String" allowNull="true"/>
+            <element name="standard" typeRef="java.lang.String" allowNull="true"/>
+            <element name="subjectId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="testDetails" typeRef="com.student_usecase.studentportal_db.TestDetails" allowNull="true"/>
+            <element name="testId" typeRef="java.lang.Integer" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.student_usecase.studentportal_db.Academics">
+            <element name="academicSubjectses" typeRef="com.student_usecase.studentportal_db.AcademicSubjects" isList="true" allowNull="true"/>
+            <element name="academicYear" typeRef="java.util.Date" allowNull="true"/>
+            <element name="classRoom" typeRef="java.lang.String" allowNull="true"/>
+            <element name="classTeacher" typeRef="java.lang.String" allowNull="true"/>
+            <element name="standard" typeRef="java.lang.String" allowNull="true"/>
+            <element name="standardDetails" typeRef="com.student_usecase.studentportal_db.StandardDetails" allowNull="true"/>
+            <element name="studentAcademicses" typeRef="com.student_usecase.studentportal_db.StudentAcademics" isList="true" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.student_usecase.studentportal_db.GradeDetails">
+            <element name="grade" typeRef="java.lang.String" allowNull="true"/>
+            <element name="gradeId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="resultses" typeRef="com.student_usecase.studentportal_db.Results" isList="true" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.student_usecase.studentportal_db.Results">
+            <element name="academicYear" typeRef="java.util.Date" allowNull="true"/>
+            <element name="gradeDetails" typeRef="com.student_usecase.studentportal_db.GradeDetails" allowNull="true"/>
+            <element name="gradeId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="marksSecured" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="standard" typeRef="java.lang.String" allowNull="true"/>
+            <element name="studentAcademics" typeRef="com.student_usecase.studentportal_db.StudentAcademics" allowNull="true"/>
+            <element name="studentId" typeRef="java.lang.Integer" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.student_usecase.studentportal_db.StandardDetails">
+            <element name="academicses" typeRef="com.student_usecase.studentportal_db.Academics" isList="true" allowNull="true"/>
+            <element name="standardId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="standardName" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.student_usecase.studentportal_db.StudentAcademics">
+            <element name="academicYear" typeRef="java.util.Date" allowNull="true"/>
+            <element name="academics" typeRef="com.student_usecase.studentportal_db.Academics" allowNull="true"/>
+            <element name="resultses" typeRef="com.student_usecase.studentportal_db.Results" isList="true" allowNull="true"/>
+            <element name="rollNumber" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="standard" typeRef="java.lang.String" allowNull="true"/>
+            <element name="studentDetails" typeRef="com.student_usecase.studentportal_db.StudentDetails" allowNull="true"/>
+            <element name="studentId" typeRef="java.lang.Integer" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.student_usecase.studentportal_db.StudentDetails">
+            <element name="address" typeRef="java.lang.String" allowNull="true"/>
+            <element name="contactNumber" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="dateOfBirth" typeRef="java.util.Date" allowNull="true"/>
+            <element name="fatherName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="joiningDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="studentAcademicses" typeRef="com.student_usecase.studentportal_db.StudentAcademics" isList="true" allowNull="true"/>
+            <element name="studentId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="studentName" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.student_usecase.studentportal_db.Subjects">
+            <element name="academicSubjectses" typeRef="com.student_usecase.studentportal_db.AcademicSubjects" isList="true" allowNull="true"/>
+            <element name="subjectId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="subjectName" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.student_usecase.studentportal_db.TestDetails">
+            <element name="academicTestSubjectses" typeRef="com.student_usecase.studentportal_db.AcademicTestSubjects" isList="true" allowNull="true"/>
+            <element name="testId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="testName" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.wavemaker.runtime.data.expression.QueryFilter">
+            <element name="attributeName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="attributeType" typeRef="java.lang.String" allowNull="true"/>
+            <element name="attributeValue" allowNull="true"/>
+            <element name="filterCondition" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.wavemaker.runtime.data.model.CustomProcedure">
+            <element name="procedureParams" typeRef="com.wavemaker.runtime.data.model.CustomProcedureParam" isList="true" allowNull="true"/>
+            <element name="procedureStr" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.wavemaker.runtime.data.model.CustomQuery">
+            <element name="nativeSql" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="queryParams" typeRef="com.wavemaker.runtime.data.model.CustomQueryParam" isList="true" allowNull="true"/>
+            <element name="queryStr" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+    </dataobjects>
+</service>

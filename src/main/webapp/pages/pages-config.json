@@ -1,25 +1,53 @@
 [ {
   "name" : "Common",
-  "type" : "PARTIAL"
+  "type" : "PARTIAL",
+  "params" : [ ]
 }, {
   "name" : "Login",
-  "type" : "PAGE"
+  "type" : "PAGE",
+  "params" : [ ]
 }, {
   "name" : "Main",
-  "type" : "PAGE"
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Page1",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Page2",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Page4",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Page6",
+  "type" : "PAGE",
+  "params" : [ ]
 }, {
   "name" : "footer",
-  "type" : "FOOTER"
+  "type" : "FOOTER",
+  "params" : [ ]
 }, {
   "name" : "header",
-  "type" : "HEADER"
+  "type" : "HEADER",
+  "params" : [ ]
 }, {
   "name" : "leftnav",
-  "type" : "LEFTNAV"
+  "type" : "LEFTNAV",
+  "params" : [ ]
+}, {
+  "name" : "page5",
+  "type" : "PAGE",
+  "params" : [ ]
 }, {
   "name" : "rightnav",
-  "type" : "RIGHTNAV"
+  "type" : "RIGHTNAV",
+  "params" : [ ]
 }, {
   "name" : "topnav",
-  "type" : "TOPNAV"
+  "type" : "TOPNAV",
+  "params" : [ ]
 } ]

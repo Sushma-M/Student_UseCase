@@ -1,0 +1,28 @@
+{
+  "username" : "{WM_CLOUD_MYSQL_USER_NAME}",
+  "password" : "{WM_CLOUD_MYSQL_PASSWORD}",
+  "url" : "jdbc:mysql://{WM_CLOUD_MYSQL_HOST}/StudentPortal_DB?useUnicode=yes&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&createDatabaseIfNotExist=true",
+  "driverClass" : "com.mysql.jdbc.Driver",
+  "dialect" : "com.wavemaker.runtime.data.dialect.MySQLDialect",
+  "serviceId" : "StudentPortal_DB",
+  "packageName" : "com.student_usecase.studentportal_db",
+  "dbType" : "MySQL",
+  "host" : "{WM_CLOUD_MYSQL_HOST}",
+  "dbName" : "StudentPortal_DB",
+  "port" : "",
+  "schemaName" : null,
+  "tableFilter" : [ "ACADEMICS", "ACADEMIC_SUBJECTS", "ACADEMIC_TEST_SUBJECTS", "GRADE_DETAILS", "RESULTS", "STANDARD_DETAILS", "STUDENT_ACADEMICS", "STUDENT_DETAILS", "SUBJECTS", "TEST_DETAILS" ],
+  "schemaFilter" : [ ".*" ],
+  "impersonateUser" : false,
+  "activeDirectoryDomain" : null,
+  "hbm2ddl" : "update",
+  "maxPageSize" : 100,
+  "dataSourceType" : "WM_MANAGED_DATASOURCE",
+  "jndiName" : "",
+  "reloadInfo" : {
+    "reload" : false,
+    "reason" : null,
+    "message" : null
+  },
+  "readOnly" : false
+}
