@@ -37,6 +37,7 @@ public class StudentDetails implements Serializable {
     private BigInteger contactNumber;
     private Date joiningDate;
     private List<StudentAcademics> studentAcademicses = new ArrayList<>();
+    private List<Results> resultses = new ArrayList<>();
 
     @Id
     @Column(name = "`STUDENT_ID`", nullable = false, scale = 0, precision = 10)
@@ -111,6 +112,15 @@ public class StudentDetails implements Serializable {
 
     public void setStudentAcademicses(List<StudentAcademics> studentAcademicses) {
         this.studentAcademicses = studentAcademicses;
+    }
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, mappedBy = "studentDetails")
+    public List<Results> getResultses() {
+        return this.resultses;
+    }
+
+    public void setResultses(List<Results> resultses) {
+        this.resultses = resultses;
     }
 
     @Override

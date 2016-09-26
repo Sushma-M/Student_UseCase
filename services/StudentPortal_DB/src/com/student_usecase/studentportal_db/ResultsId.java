@@ -15,6 +15,8 @@ public class ResultsId implements Serializable {
     private String standard;
     private Integer studentId;
     private Integer gradeId;
+    private Integer testId;
+    private Integer subjectId;
 
     public Date getAcademicYear() {
         return this.academicYear;
@@ -48,6 +50,22 @@ public class ResultsId implements Serializable {
         this.gradeId = gradeId;
     }
 
+    public Integer getTestId() {
+        return this.testId;
+    }
+
+    public void setTestId(Integer testId) {
+        this.testId = testId;
+    }
+
+    public Integer getSubjectId() {
+        return this.subjectId;
+    }
+
+    public void setSubjectId(Integer subjectId) {
+        this.subjectId = subjectId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -56,7 +74,9 @@ public class ResultsId implements Serializable {
         return Objects.equals(getAcademicYear(), results.getAcademicYear()) &&
                 Objects.equals(getStandard(), results.getStandard()) &&
                 Objects.equals(getStudentId(), results.getStudentId()) &&
-                Objects.equals(getGradeId(), results.getGradeId());
+                Objects.equals(getGradeId(), results.getGradeId()) &&
+                Objects.equals(getTestId(), results.getTestId()) &&
+                Objects.equals(getSubjectId(), results.getSubjectId());
     }
 
     @Override
@@ -64,6 +84,8 @@ public class ResultsId implements Serializable {
         return Objects.hash(getAcademicYear(),
                 getStandard(),
                 getStudentId(),
-                getGradeId());
+                getGradeId(),
+                getTestId(),
+                getSubjectId());
     }
 }

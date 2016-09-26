@@ -15,15 +15,11 @@
   "type" : "PAGE",
   "params" : [ ]
 }, {
-  "name" : "Page2",
+  "name" : "StudentDetails",
   "type" : "PAGE",
   "params" : [ ]
 }, {
-  "name" : "Page4",
-  "type" : "PAGE",
-  "params" : [ ]
-}, {
-  "name" : "Page6",
+  "name" : "StudentResults",
   "type" : "PAGE",
   "params" : [ ]
 }, {
@@ -37,10 +33,6 @@
 }, {
   "name" : "leftnav",
   "type" : "LEFTNAV",
-  "params" : [ ]
-}, {
-  "name" : "page5",
-  "type" : "PAGE",
   "params" : [ ]
 }, {
   "name" : "rightnav",

@@ -58,12 +58,14 @@ public class ResultsController {
     @ApiOperation(value = "Returns the Results instance associated with the given composite-id.")
     @RequestMapping(value = "/composite-id", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public Results getResults(@RequestParam("academicYear") Date academicYear, @RequestParam("standard") String standard, @RequestParam("studentId") Integer studentId, @RequestParam("gradeId") Integer gradeId) throws EntityNotFoundException {
+    public Results getResults(@RequestParam(value = "academicYear", required = true) Date academicYear, @RequestParam(value = "standard", required = true) String standard, @RequestParam(value = "studentId", required = true) Integer studentId, @RequestParam(value = "gradeId", required = true) Integer gradeId, @RequestParam(value = "testId", required = true) Integer testId, @RequestParam(value = "subjectId", required = true) Integer subjectId) throws EntityNotFoundException {
         ResultsId resultsId = new ResultsId();
         resultsId.setAcademicYear(academicYear);
         resultsId.setStandard(standard);
         resultsId.setStudentId(studentId);
         resultsId.setGradeId(gradeId);
+        resultsId.setTestId(testId);
+        resultsId.setSubjectId(subjectId);
         LOGGER.debug("Getting Results with id: {}", resultsId);
         Results results = resultsService.getById(resultsId);
         LOGGER.debug("Results details with id: {}", results);
@@ -73,11 +75,13 @@ public class ResultsController {
     @ApiOperation(value = "Updates the Results instance associated with the given composite-id.")
     @RequestMapping(value = "/composite-id", method = RequestMethod.PUT)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public Results editResults(@RequestParam("academicYear") Date academicYear, @RequestParam("standard") String standard, @RequestParam("studentId") Integer studentId, @RequestParam("gradeId") Integer gradeId, @RequestBody Results results) throws EntityNotFoundException {
+    public Results editResults(@RequestParam(value = "academicYear", required = true) Date academicYear, @RequestParam(value = "standard", required = true) String standard, @RequestParam(value = "studentId", required = true) Integer studentId, @RequestParam(value = "gradeId", required = true) Integer gradeId, @RequestParam(value = "testId", required = true) Integer testId, @RequestParam(value = "subjectId", required = true) Integer subjectId, @RequestBody Results results) throws EntityNotFoundException {
         results.setAcademicYear(academicYear);
         results.setStandard(standard);
         results.setStudentId(studentId);
         results.setGradeId(gradeId);
+        results.setTestId(testId);
+        results.setSubjectId(subjectId);
         LOGGER.debug("Results details with id is updated with: {}", results);
         return resultsService.update(results);
     }
@@ -85,12 +89,14 @@ public class ResultsController {
     @ApiOperation(value = "Deletes the Results instance associated with the given composite-id.")
     @RequestMapping(value = "/composite-id", method = RequestMethod.DELETE)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public boolean deleteResults(@RequestParam("academicYear") Date academicYear, @RequestParam("standard") String standard, @RequestParam("studentId") Integer studentId, @RequestParam("gradeId") Integer gradeId) throws EntityNotFoundException {
+    public boolean deleteResults(@RequestParam(value = "academicYear", required = true) Date academicYear, @RequestParam(value = "standard", required = true) String standard, @RequestParam(value = "studentId", required = true) Integer studentId, @RequestParam(value = "gradeId", required = true) Integer gradeId, @RequestParam(value = "testId", required = true) Integer testId, @RequestParam(value = "subjectId", required = true) Integer subjectId) throws EntityNotFoundException {
         ResultsId resultsId = new ResultsId();
         resultsId.setAcademicYear(academicYear);
         resultsId.setStandard(standard);
         resultsId.setStudentId(studentId);
         resultsId.setGradeId(gradeId);
+        resultsId.setTestId(testId);
+        resultsId.setSubjectId(subjectId);
         LOGGER.debug("Deleting Results with id: {}", resultsId);
         Results results = resultsService.delete(resultsId);
         return results != null;

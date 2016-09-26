@@ -17,14 +17,31 @@ Application.$controller("Page1PageController", ["$scope", function ($scope) {
 }]);
 
 
-Application.$controller("grid1Controller", ["$scope",
+
+
+
+Application.$controller("pagedialog1Controller", ["$scope",
 	function($scope) {
 		"use strict";
 		$scope.ctrlScope = $scope;
 	}
 ]);
 
-Application.$controller("liveform1Controller", ["$scope",
+Application.$controller("pagedialog2Controller", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
+
+Application.$controller("grid3Controller", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
+
+Application.$controller("liveform3Controller", ["$scope",
 	function($scope) {
 		"use strict";
 		$scope.ctrlScope = $scope;

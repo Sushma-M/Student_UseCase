@@ -27,6 +27,7 @@ public class GradeDetails implements Serializable {
 
     private Integer gradeId;
     private String grade;
+    private String gradeRange;
     private List<Results> resultses = new ArrayList<>();
 
     @Id
@@ -46,6 +47,15 @@ public class GradeDetails implements Serializable {
 
     public void setGrade(String grade) {
         this.grade = grade;
+    }
+
+    @Column(name = "`GRADE_RANGE`", nullable = true, length = 255)
+    public String getGradeRange() {
+        return this.gradeRange;
+    }
+
+    public void setGradeRange(String gradeRange) {
+        this.gradeRange = gradeRange;
     }
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, mappedBy = "gradeDetails")

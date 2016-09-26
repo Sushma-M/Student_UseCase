@@ -21,6 +21,7 @@ import com.wavemaker.runtime.data.export.ExportType;
 import com.wavemaker.runtime.data.expression.QueryFilter;
 import com.wavemaker.runtime.file.model.Downloadable;
 
+import com.student_usecase.studentportal_db.Results;
 import com.student_usecase.studentportal_db.StudentAcademics;
 import com.student_usecase.studentportal_db.StudentDetails;
 
@@ -34,6 +35,10 @@ import com.student_usecase.studentportal_db.StudentDetails;
 public class StudentDetailsServiceImpl implements StudentDetailsService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(StudentDetailsServiceImpl.class);
+
+    @Autowired
+	@Qualifier("StudentPortal_DB.ResultsService")
+	private ResultsService resultsService;
 
     @Autowired
 	@Qualifier("StudentPortal_DB.StudentAcademicsService")
@@ -57,6 +62,14 @@ public class StudentDetailsServiceImpl implements StudentDetailsService {
                 studentAcademicse.setStudentDetails(studentDetailsCreated);
                 LOGGER.debug("Creating a new child StudentAcademics with information: {}", studentAcademicse);
                 studentAcademicsService.create(studentAcademicse);
+            }
+        }
+
+        if(studentDetailsCreated.getResultses() != null) {
+            for(Results resultse : studentDetailsCreated.getResultses()) {
+                resultse.setStudentDetails(studentDetailsCreated);
+                LOGGER.debug("Creating a new child Results with information: {}", resultse);
+                resultsService.create(resultse);
             }
         }
         return studentDetailsCreated;
@@ -142,6 +155,26 @@ public class StudentDetailsServiceImpl implements StudentDetailsService {
         queryBuilder.append("studentDetails.studentId = '" + studentId + "'");
 
         return studentAcademicsService.findAll(queryBuilder.toString(), pageable);
+    }
+
+    @Transactional(readOnly = true, value = "StudentPortal_DBTransactionManager")
+    @Override
+    public Page<Results> findAssociatedResultses(Integer studentId, Pageable pageable) {
+        LOGGER.debug("Fetching all associated resultses");
+
+        StringBuilder queryBuilder = new StringBuilder();
+        queryBuilder.append("studentDetails.studentId = '" + studentId + "'");
+
+        return resultsService.findAll(queryBuilder.toString(), pageable);
+    }
+
+    /**
+	 * This setter method should only be used by unit tests
+	 *
+	 * @param service ResultsService instance
+	 */
+	protected void setResultsService(ResultsService service) {
+        this.resultsService = service;
     }
 
     /**

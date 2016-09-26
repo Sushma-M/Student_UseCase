@@ -14,6 +14,7 @@ import com.wavemaker.runtime.data.export.ExportType;
 import com.wavemaker.runtime.data.expression.QueryFilter;
 import com.wavemaker.runtime.file.model.Downloadable;
 
+import com.student_usecase.studentportal_db.Results;
 import com.student_usecase.studentportal_db.StudentAcademics;
 import com.student_usecase.studentportal_db.StudentDetails;
 
@@ -137,6 +138,18 @@ public interface StudentDetailsService {
      * @see Page
      */
     Page<StudentAcademics> findAssociatedStudentAcademicses(Integer studentId, Pageable pageable);
+
+    /*
+     * Returns the associated resultses for given StudentDetails id.
+     *
+     * @param studentId value of studentId; value cannot be null
+     * @param pageable Details of the pagination information along with the sorting options. If null returns all matching records.
+     * @return Paginated list of associated Results instances.
+     *
+     * @see Pageable
+     * @see Page
+     */
+    Page<Results> findAssociatedResultses(Integer studentId, Pageable pageable);
 
 }
 

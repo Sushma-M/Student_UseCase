@@ -1,5 +1,5 @@
 var _WM_APP_PROPERTIES = {
-  "activeTheme" : "material",
+  "activeTheme" : "passion",
   "defaultLanguage" : "en",
   "displayName" : "Student_UseCase",
   "homePage" : "Main",

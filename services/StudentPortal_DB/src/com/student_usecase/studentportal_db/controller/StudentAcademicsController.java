@@ -26,7 +26,6 @@ import com.wavemaker.tools.api.core.models.AccessSpecifier;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiParam;
-import com.student_usecase.studentportal_db.Results;
 import com.student_usecase.studentportal_db.StudentAcademics;
 import com.student_usecase.studentportal_db.StudentAcademicsId;
 import com.student_usecase.studentportal_db.service.StudentAcademicsService;
@@ -135,14 +134,6 @@ public class StudentAcademicsController {
     public Long countStudentAcademics(@ApiParam("conditions to filter the results") @RequestParam(value = "q", required = false) String query) {
         LOGGER.debug("counting StudentAcademics");
         return studentAcademicsService.count(query);
-    }
-
-    @RequestMapping(value = "/composite-id/resultses", method = RequestMethod.GET)
-    @ApiOperation(value = "Gets the resultses instance associated with the given composite-id.")
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public Page<Results> findAssociatedResultses(@RequestParam(value = "studentId", required = true) Integer studentId, @RequestParam(value = "academicYear", required = true) Date academicYear, @RequestParam(value = "standard", required = true) String standard, Pageable pageable) {
-        LOGGER.debug("Fetching all associated resultses");
-        return studentAcademicsService.findAssociatedResultses(studentId, academicYear, standard, pageable);
     }
 
     /**

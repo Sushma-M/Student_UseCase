@@ -83,6 +83,8 @@ public class ResultsServiceImpl implements ResultsService {
         resultsId.setStandard(results.getStandard());
         resultsId.setStudentId(results.getStudentId());
         resultsId.setGradeId(results.getGradeId());
+        resultsId.setTestId(results.getTestId());
+        resultsId.setSubjectId(results.getSubjectId());
 
         return this.wmGenericDao.findById(resultsId);
     }

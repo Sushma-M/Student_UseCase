@@ -119,8 +119,9 @@ public class GradeDetailsController {
         return gradeDetailsService.count(query);
     }
 
-    @RequestMapping(value = "/{id:.+}/resultses", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}/resultses", method = RequestMethod.GET)
     @ApiOperation(value = "Gets the resultses instance associated with the given id.")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     public Page<Results> findAssociatedResultses(@PathVariable("id") Integer id, Pageable pageable) {
         LOGGER.debug("Fetching all associated resultses");
         return gradeDetailsService.findAssociatedResultses(id, pageable);

@@ -15,6 +15,12 @@ import com.wavemaker.runtime.data.model.CustomQuery;
 import com.wavemaker.runtime.data.exception.QueryParameterMismatchException;
 
 public interface StudentPortal_DBQueryExecutorService {
+    Page<Object> executeSV_AcademicSubjectsByStandard(Pageable pageable, java.sql.Date year, java.lang.String standard) throws QueryParameterMismatchException;
+    Page<Object> executeSV_CountOfStudentsInAcademics(Pageable pageable, java.lang.String standard, java.sql.Date year) throws QueryParameterMismatchException;
+    Page<Object> executeSV_ResultsByTestID(Pageable pageable, java.lang.String T_Name) throws QueryParameterMismatchException;
+    Page<Object> executeSV_StudentAcademicResults(Pageable pageable, java.lang.Integer student_id) throws QueryParameterMismatchException;
+    Page<Object> executeSV_TestDetails(Pageable pageable) throws QueryParameterMismatchException;
+    Page<Object> executeSV_TestQuery(Pageable pageable) throws QueryParameterMismatchException;
 
 	
 	Page<Object> executeWMCustomQuerySelect(CustomQuery query, Pageable pageable) ;

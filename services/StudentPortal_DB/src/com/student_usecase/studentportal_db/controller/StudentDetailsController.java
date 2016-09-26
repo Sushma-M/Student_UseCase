@@ -25,6 +25,7 @@ import com.wavemaker.tools.api.core.models.AccessSpecifier;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiParam;
+import com.student_usecase.studentportal_db.Results;
 import com.student_usecase.studentportal_db.StudentAcademics;
 import com.student_usecase.studentportal_db.StudentDetails;
 import com.student_usecase.studentportal_db.service.StudentDetailsService;
@@ -125,6 +126,14 @@ public class StudentDetailsController {
     public Page<StudentAcademics> findAssociatedStudentAcademicses(@PathVariable("id") Integer id, Pageable pageable) {
         LOGGER.debug("Fetching all associated studentAcademicses");
         return studentDetailsService.findAssociatedStudentAcademicses(id, pageable);
+    }
+
+    @RequestMapping(value = "/{id}/resultses", method = RequestMethod.GET)
+    @ApiOperation(value = "Gets the resultses instance associated with the given id.")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<Results> findAssociatedResultses(@PathVariable("id") Integer id, Pageable pageable) {
+        LOGGER.debug("Fetching all associated resultses");
+        return studentDetailsService.findAssociatedResultses(id, pageable);
     }
 
     /**

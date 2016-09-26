@@ -1,6 +1,93 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="StudentPortal_DB" type="DataService" springFile="StudentPortal_DB.spring.xml">
+    <operation operationType="nativequery" name="SV_Query">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="StudentPortal_DBSV_QueryrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="SV_AcademicSubjectsByStandard">
+        <parameter name="year" typeRef="java.sql.Date" isList="false"/>
+        <parameter name="standard" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="StudentPortal_DBSV_AcademicSubjectsByStandardrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="SV_CountOfStudentsInAcademics">
+        <parameter name="standard" typeRef="java.lang.String" isList="false"/>
+        <parameter name="year" typeRef="java.sql.Date" isList="false"/>
+        <return typeRef="StudentPortal_DBSV_CountOfStudentsInAcademicsrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="SV_ResultsByTestID">
+        <parameter name="T_Name" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="StudentPortal_DBSV_ResultsByTestIDrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="SV_StudentAcademicResults">
+        <parameter name="student_id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="StudentPortal_DBSV_StudentAcademicResultsrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="SV_TestDetails">
+        <return typeRef="StudentPortal_DBSV_TestDetailsrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="SV_TestQuery">
+        <return typeRef="StudentPortal_DBSV_TestQueryrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="SV_AcademicSubjectsByStandard">
+        <parameter name="year" typeRef="java.sql.Date" isList="false"/>
+        <parameter name="standard" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="StudentPortal_DBSV_AcademicSubjectsByStandardrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="SV_CountOfStudentsInAcademics">
+        <parameter name="standard" typeRef="java.lang.String" isList="false"/>
+        <parameter name="year" typeRef="java.sql.Date" isList="false"/>
+        <return typeRef="StudentPortal_DBSV_CountOfStudentsInAcademicsrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="SV_ResultsByTestID">
+        <parameter name="T_Name" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="StudentPortal_DBSV_ResultsByTestIDrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="SV_StudentAcademicResults">
+        <parameter name="student_id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="StudentPortal_DBSV_StudentAcademicResultsrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="SV_TestDetails">
+        <return typeRef="StudentPortal_DBSV_TestDetailsrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="SV_TestQuery">
+        <return typeRef="StudentPortal_DBSV_TestQueryrtnType" isList="false"/>
+    </operation>
     <dataobjects>
+        <dataobject javaType="StudentPortal_DBSV_AcademicSubjectsByStandardrtnType">
+            <element name="STANDARD_NAME" typeRef="java.lang.String"/>
+            <element name="SUBJECT_NAME" typeRef="java.lang.String"/>
+            <element name="SUBJECT_TEACHER" typeRef="java.lang.String"/>
+        </dataobject>
+        <dataobject javaType="StudentPortal_DBSV_CountOfStudentsInAcademicsrtnType">
+            <element name="STANDARD" typeRef="java.lang.String"/>
+            <element name="count(STUDENT_ID)" typeRef="java.math.BigInteger"/>
+        </dataobject>
+        <dataobject javaType="StudentPortal_DBSV_ResultsByTestIDrtnType">
+            <element name="MARKS_SECURED" typeRef="java.math.BigDecimal"/>
+            <element name="STUDENTID" typeRef="java.lang.Integer"/>
+            <element name="STUDENTNAME" typeRef="java.lang.String"/>
+            <element name="TESTID" typeRef="java.lang.Integer"/>
+            <element name="TESTNAME" typeRef="java.lang.String"/>
+        </dataobject>
+        <dataobject javaType="StudentPortal_DBSV_StudentAcademicResultsrtnType">
+            <element name="GRADE" typeRef="java.lang.String"/>
+            <element name="MARKS_SECURED" typeRef="java.math.BigDecimal"/>
+            <element name="STUDENTID" typeRef="java.lang.Integer"/>
+            <element name="STUDENTNAME" typeRef="java.lang.String"/>
+            <element name="TESTID" typeRef="java.lang.Integer"/>
+            <element name="TESTNAME" typeRef="java.lang.String"/>
+        </dataobject>
+        <dataobject javaType="StudentPortal_DBSV_TestDetailsrtnType">
+            <element name="TEST_ID" typeRef="java.lang.Integer"/>
+            <element name="TEST_NAME" typeRef="java.lang.String"/>
+            <element name="count(TEST_ID)" typeRef="java.math.BigInteger"/>
+        </dataobject>
+        <dataobject javaType="StudentPortal_DBSV_TestQueryrtnType">
+            <element name="CONTACT_NUMBER" typeRef="java.math.BigInteger"/>
+            <element name="FATHER_NAME" typeRef="java.lang.String"/>
+            <element name="STUDENT_ID" typeRef="java.lang.Integer"/>
+            <element name="STUDENT_NAME" typeRef="java.lang.String"/>
+        </dataobject>
         <dataobject javaType="com.student_usecase.studentportal_db.AcademicSubjects">
             <element name="academicTestSubjectses" typeRef="com.student_usecase.studentportal_db.AcademicTestSubjects" isList="true" allowNull="true"/>
             <element name="academicYear" typeRef="java.util.Date" allowNull="true"/>
@@ -15,6 +102,7 @@
             <element name="academicYear" typeRef="java.util.Date" allowNull="true"/>
             <element name="examConductedOn" typeRef="java.util.Date" allowNull="true"/>
             <element name="maxMarks" typeRef="java.lang.String" allowNull="true"/>
+            <element name="resultses" typeRef="com.student_usecase.studentportal_db.Results" isList="true" allowNull="true"/>
             <element name="standard" typeRef="java.lang.String" allowNull="true"/>
             <element name="subjectId" typeRef="java.lang.Integer" allowNull="true"/>
             <element name="testDetails" typeRef="com.student_usecase.studentportal_db.TestDetails" allowNull="true"/>
@@ -32,16 +120,20 @@
         <dataobject javaType="com.student_usecase.studentportal_db.GradeDetails">
             <element name="grade" typeRef="java.lang.String" allowNull="true"/>
             <element name="gradeId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="gradeRange" typeRef="java.lang.String" allowNull="true"/>
             <element name="resultses" typeRef="com.student_usecase.studentportal_db.Results" isList="true" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.student_usecase.studentportal_db.Results">
+            <element name="academicTestSubjects" typeRef="com.student_usecase.studentportal_db.AcademicTestSubjects" allowNull="true"/>
             <element name="academicYear" typeRef="java.util.Date" allowNull="true"/>
             <element name="gradeDetails" typeRef="com.student_usecase.studentportal_db.GradeDetails" allowNull="true"/>
             <element name="gradeId" typeRef="java.lang.Integer" allowNull="true"/>
             <element name="marksSecured" typeRef="java.lang.Integer" allowNull="true"/>
             <element name="standard" typeRef="java.lang.String" allowNull="true"/>
-            <element name="studentAcademics" typeRef="com.student_usecase.studentportal_db.StudentAcademics" allowNull="true"/>
+            <element name="studentDetails" typeRef="com.student_usecase.studentportal_db.StudentDetails" allowNull="true"/>
             <element name="studentId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="subjectId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="testId" typeRef="java.lang.Integer" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.student_usecase.studentportal_db.StandardDetails">
             <element name="academicses" typeRef="com.student_usecase.studentportal_db.Academics" isList="true" allowNull="true"/>
@@ -51,7 +143,6 @@
         <dataobject javaType="com.student_usecase.studentportal_db.StudentAcademics">
             <element name="academicYear" typeRef="java.util.Date" allowNull="true"/>
             <element name="academics" typeRef="com.student_usecase.studentportal_db.Academics" allowNull="true"/>
-            <element name="resultses" typeRef="com.student_usecase.studentportal_db.Results" isList="true" allowNull="true"/>
             <element name="rollNumber" typeRef="java.lang.Integer" allowNull="true"/>
             <element name="standard" typeRef="java.lang.String" allowNull="true"/>
             <element name="studentDetails" typeRef="com.student_usecase.studentportal_db.StudentDetails" allowNull="true"/>
@@ -63,6 +154,7 @@
             <element name="dateOfBirth" typeRef="java.util.Date" allowNull="true"/>
             <element name="fatherName" typeRef="java.lang.String" allowNull="true"/>
             <element name="joiningDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="resultses" typeRef="com.student_usecase.studentportal_db.Results" isList="true" allowNull="true"/>
             <element name="studentAcademicses" typeRef="com.student_usecase.studentportal_db.StudentAcademics" isList="true" allowNull="true"/>
             <element name="studentId" typeRef="java.lang.Integer" allowNull="true"/>
             <element name="studentName" typeRef="java.lang.String" allowNull="true"/>
@@ -76,6 +168,12 @@
             <element name="academicTestSubjectses" typeRef="com.student_usecase.studentportal_db.AcademicTestSubjects" isList="true" allowNull="true"/>
             <element name="testId" typeRef="java.lang.Integer" allowNull="true"/>
             <element name="testName" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.student_usecase.studentportal_db.UserLogin">
+            <element name="password" typeRef="java.lang.String" allowNull="true"/>
+            <element name="role" typeRef="java.lang.String" allowNull="true"/>
+            <element name="userId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="userName" typeRef="java.lang.String" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.wavemaker.runtime.data.expression.QueryFilter">
             <element name="attributeName" typeRef="java.lang.String" allowNull="true"/>

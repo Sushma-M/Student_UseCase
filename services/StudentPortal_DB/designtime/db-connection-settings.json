@@ -11,7 +11,7 @@
   "dbName" : "StudentPortal_DB",
   "port" : "",
   "schemaName" : null,
-  "tableFilter" : [ "ACADEMICS", "ACADEMIC_SUBJECTS", "ACADEMIC_TEST_SUBJECTS", "GRADE_DETAILS", "RESULTS", "STANDARD_DETAILS", "STUDENT_ACADEMICS", "STUDENT_DETAILS", "SUBJECTS", "TEST_DETAILS" ],
+  "tableFilter" : [ "ACADEMICS", "ACADEMIC_SUBJECTS", "ACADEMIC_TEST_SUBJECTS", "GRADE_DETAILS", "RESULTS", "STANDARD_DETAILS", "STUDENT_ACADEMICS", "STUDENT_DETAILS", "SUBJECTS", "TEST_DETAILS", "USER_LOGIN" ],
   "schemaFilter" : [ ".*" ],
   "impersonateUser" : false,
   "activeDirectoryDomain" : null,

@@ -1,5 +1,142 @@
 {
   "name" : "StudentPortal_DB",
   "description" : "Queries for StudentPortal_DB",
-  "queries" : [ ]
+  "queries" : [ {
+    "name" : "SV_AcademicSubjectsByStandard",
+    "query" : "select sub.SUBJECT_NAME as SUBJECT_NAME,stnd.STANDARD_NAME as STANDARD_NAME,acs.SUBJECT_TEACHER as SUBJECT_TEACHER from ACADEMIC_SUBJECTS acs,SUBJECTS sub,STANDARD_DETAILS stnd where acs.ACADEMIC_YEAR=:year and acs.STANDARD=:standard and acs.SUBJECT_ID=sub.SUBJECT_ID and acs.STANDARD=stnd.STANDARD_ID",
+    "comment" : "Fetching the academic Subjects for the particular standard",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : false,
+    "queryParams" : [ {
+      "paramName" : "year",
+      "paramType" : "java.sql.Date",
+      "testValue" : "2017-01-01",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    }, {
+      "paramName" : "standard",
+      "paramType" : "java.lang.String",
+      "testValue" : "II",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    } ],
+    "outputType" : "StudentPortal_DBSV_AcademicSubjectsByStandardrtnType",
+    "returnTypeMetadata" : {
+      "STANDARD_NAME" : "java.lang.String",
+      "SUBJECT_NAME" : "java.lang.String",
+      "SUBJECT_TEACHER" : "java.lang.String"
+    }
+  }, {
+    "name" : "SV_CountOfStudentsInAcademics",
+    "query" : "select count(STUDENT_ID),STANDARD from STUDENT_ACADEMICS where STANDARD=:standard and ACADEMIC_YEAR=:year group by STANDARD",
+    "comment" : "Count Of Students in particular academic",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : false,
+    "queryParams" : [ {
+      "paramName" : "standard",
+      "paramType" : "java.lang.String",
+      "testValue" : "I",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    }, {
+      "paramName" : "year",
+      "paramType" : "java.sql.Date",
+      "testValue" : "2016-01-01",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    } ],
+    "outputType" : "StudentPortal_DBSV_CountOfStudentsInAcademicsrtnType",
+    "returnTypeMetadata" : {
+      "STANDARD" : "java.lang.String",
+      "count(STUDENT_ID)" : "java.math.BigInteger"
+    }
+  }, {
+    "name" : "SV_ResultsByTestID",
+    "query" : "select sum(r.MARKS_SECURED) as MARKS_SECURED, r.STUDENT_ID as STUDENTID,s.STUDENT_NAME as STUDENTNAME ,r.TEST_ID as TESTID, t.TEST_NAME as TESTNAME from RESULTS r, STUDENT_DETAILS s, TEST_DETAILS t where r.STUDENT_ID=s.STUDENT_ID and t.TEST_NAME=:T_Name and t.TEST_ID=r.TEST_ID group by r.STUDENT_ID,r.TEST_ID",
+    "comment" : "Results",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : false,
+    "queryParams" : [ {
+      "paramName" : "T_Name",
+      "paramType" : "java.lang.String",
+      "testValue" : "1st Unit Test",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    } ],
+    "outputType" : "StudentPortal_DBSV_ResultsByTestIDrtnType",
+    "returnTypeMetadata" : {
+      "MARKS_SECURED" : "java.math.BigDecimal",
+      "STUDENTID" : "java.lang.Integer",
+      "STUDENTNAME" : "java.lang.String",
+      "TESTID" : "java.lang.Integer",
+      "TESTNAME" : "java.lang.String"
+    }
+  }, {
+    "name" : "SV_StudentAcademicResults",
+    "query" : "select sum(r.MARKS_SECURED) as MARKS_SECURED, r.STUDENT_ID as STUDENTID,s.STUDENT_NAME as STUDENTNAME ,r.TEST_ID as TESTID, t.TEST_NAME as TESTNAME,g.GRADE from RESULTS r, STUDENT_DETAILS s, TEST_DETAILS t,GRADE_DETAILS g where r.STUDENT_ID=s.STUDENT_ID and t.TEST_ID=r.TEST_ID and r.GRADE_ID=g.GRADE_ID and s.STUDENT_ID=:student_id group by r.STUDENT_ID,r.TEST_ID",
+    "comment" : "Entire Academic Results",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : false,
+    "queryParams" : [ {
+      "paramName" : "student_id",
+      "paramType" : "java.lang.Integer",
+      "testValue" : "1",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    } ],
+    "outputType" : "StudentPortal_DBSV_StudentAcademicResultsrtnType",
+    "returnTypeMetadata" : {
+      "GRADE" : "java.lang.String",
+      "MARKS_SECURED" : "java.math.BigDecimal",
+      "STUDENTID" : "java.lang.Integer",
+      "STUDENTNAME" : "java.lang.String",
+      "TESTID" : "java.lang.Integer",
+      "TESTNAME" : "java.lang.String"
+    }
+  }, {
+    "name" : "SV_TestDetails",
+    "query" : "select count(TEST_ID),TEST_ID, TEST_NAME from TEST_DETAILS group by TEST_ID",
+    "comment" : "Test Details",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : false,
+    "queryParams" : [ ],
+    "outputType" : "StudentPortal_DBSV_TestDetailsrtnType",
+    "returnTypeMetadata" : {
+      "TEST_ID" : "java.lang.Integer",
+      "TEST_NAME" : "java.lang.String",
+      "count(TEST_ID)" : "java.math.BigInteger"
+    }
+  }, {
+    "name" : "SV_TestQuery",
+    "query" : "select STUDENT_ID,STUDENT_NAME,FATHER_NAME,CONTACT_NUMBER from STUDENT_DETAILS",
+    "comment" : "cubgjnhj",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : false,
+    "queryParams" : [ ],
+    "outputType" : "StudentPortal_DBSV_TestQueryrtnType",
+    "returnTypeMetadata" : {
+      "CONTACT_NUMBER" : "java.math.BigInteger",
+      "FATHER_NAME" : "java.lang.String",
+      "STUDENT_ID" : "java.lang.Integer",
+      "STUDENT_NAME" : "java.lang.String"
+    }
+  } ]
 }

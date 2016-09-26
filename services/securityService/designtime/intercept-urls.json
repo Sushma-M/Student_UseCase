@@ -1,0 +1,11 @@
+[ {
+  "urlPattern" : "/pages/Main/**",
+  "permission" : "Role",
+  "roles" : [ "management" ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/**",
+  "permission" : "Authenticated",
+  "roles" : null,
+  "httpMethod" : null
+} ]

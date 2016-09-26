@@ -39,6 +39,66 @@ public class QueryExecutionController {
     @Autowired
     private StudentPortal_DBQueryExecutorService queryService;
 
+    @ApiOperation(value = "Process request to execute queries")
+    @RequestMapping(value = "/queries/SV_AcademicSubjectsByStandard", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<Object> executeSV_AcademicSubjectsByStandard(@RequestParam(value = "year", required = false) java.sql.Date year, @RequestParam(value = "standard", required = false) java.lang.String standard, Pageable pageable) throws QueryParameterMismatchException {
+        LOGGER.debug("Executing named query SV_AcademicSubjectsByStandard");
+        Page<Object> result = queryService.executeSV_AcademicSubjectsByStandard(pageable, year, standard);
+        LOGGER.debug("got the result of named query {}", result);
+        return result;
+    }
+
+    @ApiOperation(value = "Process request to execute queries")
+    @RequestMapping(value = "/queries/SV_CountOfStudentsInAcademics", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<Object> executeSV_CountOfStudentsInAcademics(@RequestParam(value = "standard", required = false) java.lang.String standard, @RequestParam(value = "year", required = false) java.sql.Date year, Pageable pageable) throws QueryParameterMismatchException {
+        LOGGER.debug("Executing named query SV_CountOfStudentsInAcademics");
+        Page<Object> result = queryService.executeSV_CountOfStudentsInAcademics(pageable, standard, year);
+        LOGGER.debug("got the result of named query {}", result);
+        return result;
+    }
+
+    @ApiOperation(value = "Process request to execute queries")
+    @RequestMapping(value = "/queries/SV_ResultsByTestID", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<Object> executeSV_ResultsByTestID(@RequestParam(value = "T_Name", required = false) java.lang.String T_Name, Pageable pageable) throws QueryParameterMismatchException {
+        LOGGER.debug("Executing named query SV_ResultsByTestID");
+        Page<Object> result = queryService.executeSV_ResultsByTestID(pageable, T_Name);
+        LOGGER.debug("got the result of named query {}", result);
+        return result;
+    }
+
+    @ApiOperation(value = "Process request to execute queries")
+    @RequestMapping(value = "/queries/SV_StudentAcademicResults", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<Object> executeSV_StudentAcademicResults(@RequestParam(value = "student_id", required = false) java.lang.Integer student_id, Pageable pageable) throws QueryParameterMismatchException {
+        LOGGER.debug("Executing named query SV_StudentAcademicResults");
+        Page<Object> result = queryService.executeSV_StudentAcademicResults(pageable, student_id);
+        LOGGER.debug("got the result of named query {}", result);
+        return result;
+    }
+
+    @ApiOperation(value = "Process request to execute queries")
+    @RequestMapping(value = "/queries/SV_TestDetails", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<Object> executeSV_TestDetails(Pageable pageable) {
+        LOGGER.debug("Executing named query SV_TestDetails");
+        Page<Object> result = queryService.executeSV_TestDetails(pageable);
+        LOGGER.debug("got the result of named query {}", result);
+        return result;
+    }
+
+    @ApiOperation(value = "Process request to execute queries")
+    @RequestMapping(value = "/queries/SV_TestQuery", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<Object> executeSV_TestQuery(Pageable pageable) {
+        LOGGER.debug("Executing named query SV_TestQuery");
+        Page<Object> result = queryService.executeSV_TestQuery(pageable);
+        LOGGER.debug("got the result of named query {}", result);
+        return result;
+    }
+
     @ApiOperation(value = "Process request to execute customer queries")
     @RequestMapping(value = "/queries/wm_custom", method = RequestMethod.POST)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)

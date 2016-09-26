@@ -20,7 +20,7 @@
             </resource>
             <resource>
                 <filtering>true</filtering>
-                <directory>services/School_DB/src</directory>
+                <directory>services/securityService/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
                 </excludes>
@@ -94,7 +94,6 @@
                         <configuration>
                             <sources>
                                 <source>services/StudentPortal_DB/src</source>
-                                <source>services/School_DB/src</source>
                             </sources>
                         </configuration>
                     </execution>
@@ -299,6 +298,6 @@
         <profile.props.file>development.properties</profile.props.file>
         <spring.version>4.2.0.RELEASE</spring.version>
         <spring.security.version>3.2.3.RELEASE</spring.security.version>
-        <wavemaker.studio.version>8.3.0</wavemaker.studio.version>
+        <wavemaker.studio.version>8.3.1</wavemaker.studio.version>
     </properties>
 </project>

@@ -32,6 +32,54 @@ public class StudentPortal_DBQueryExecutorServiceImpl implements StudentPortal_D
 	@Qualifier("StudentPortal_DBWMQueryExecutor")
 	private WMQueryExecutor queryExecutor;
 
+	@Transactional(value = "StudentPortal_DBTransactionManager")
+	@Override
+	public Page<Object> executeSV_AcademicSubjectsByStandard(Pageable pageable, java.sql.Date year, java.lang.String standard)
+	throws QueryParameterMismatchException{
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("year", year);
+        params.put("standard", standard);
+        return queryExecutor.executeNamedQuery("SV_AcademicSubjectsByStandard", params, pageable);
+	}
+	@Transactional(value = "StudentPortal_DBTransactionManager")
+	@Override
+	public Page<Object> executeSV_CountOfStudentsInAcademics(Pageable pageable, java.lang.String standard, java.sql.Date year)
+	throws QueryParameterMismatchException{
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("standard", standard);
+        params.put("year", year);
+        return queryExecutor.executeNamedQuery("SV_CountOfStudentsInAcademics", params, pageable);
+	}
+	@Transactional(value = "StudentPortal_DBTransactionManager")
+	@Override
+	public Page<Object> executeSV_ResultsByTestID(Pageable pageable, java.lang.String T_Name)
+	throws QueryParameterMismatchException{
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("T_Name", T_Name);
+        return queryExecutor.executeNamedQuery("SV_ResultsByTestID", params, pageable);
+	}
+	@Transactional(value = "StudentPortal_DBTransactionManager")
+	@Override
+	public Page<Object> executeSV_StudentAcademicResults(Pageable pageable, java.lang.Integer student_id)
+	throws QueryParameterMismatchException{
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("student_id", student_id);
+        return queryExecutor.executeNamedQuery("SV_StudentAcademicResults", params, pageable);
+	}
+	@Transactional(value = "StudentPortal_DBTransactionManager")
+	@Override
+	public Page<Object> executeSV_TestDetails(Pageable pageable)
+	throws QueryParameterMismatchException{
+        Map<String, Object> params = new HashMap<String, Object>();
+        return queryExecutor.executeNamedQuery("SV_TestDetails", params, pageable);
+	}
+	@Transactional(value = "StudentPortal_DBTransactionManager")
+	@Override
+	public Page<Object> executeSV_TestQuery(Pageable pageable)
+	throws QueryParameterMismatchException{
+        Map<String, Object> params = new HashMap<String, Object>();
+        return queryExecutor.executeNamedQuery("SV_TestQuery", params, pageable);
+	}
 
 	@Transactional(value = "StudentPortal_DBTransactionManager")
 	@Override

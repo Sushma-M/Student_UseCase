@@ -33,9 +33,12 @@ public class Results implements Serializable {
     private String standard;
     private Integer studentId;
     private Integer gradeId;
+    private Integer testId;
+    private Integer subjectId;
     private Short marksSecured;
+    private AcademicTestSubjects academicTestSubjects;
     private GradeDetails gradeDetails;
-    private StudentAcademics studentAcademics;
+    private StudentDetails studentDetails;
 
     @Id
     @Temporal(TemporalType.DATE)
@@ -78,6 +81,26 @@ public class Results implements Serializable {
         this.gradeId = gradeId;
     }
 
+    @Id
+    @Column(name = "`TEST_ID`", nullable = false, scale = 0, precision = 10)
+    public Integer getTestId() {
+        return this.testId;
+    }
+
+    public void setTestId(Integer testId) {
+        this.testId = testId;
+    }
+
+    @Id
+    @Column(name = "`SUBJECT_ID`", nullable = false, scale = 0, precision = 10)
+    public Integer getSubjectId() {
+        return this.subjectId;
+    }
+
+    public void setSubjectId(Integer subjectId) {
+        this.subjectId = subjectId;
+    }
+
     @Column(name = "`MARKS_SECURED`", nullable = true, scale = 0, precision = 5)
     public Short getMarksSecured() {
         return this.marksSecured;
@@ -85,6 +108,27 @@ public class Results implements Serializable {
 
     public void setMarksSecured(Short marksSecured) {
         this.marksSecured = marksSecured;
+    }
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumns({
+            @JoinColumn(name = "`ACADEMIC_YEAR`", referencedColumnName = "`ACADEMIC_YEAR`", insertable = false, updatable = false),
+            @JoinColumn(name = "`STANDARD`", referencedColumnName = "`STANDARD`", insertable = false, updatable = false),
+            @JoinColumn(name = "`TEST_ID`", referencedColumnName = "`TEST_ID`", insertable = false, updatable = false),
+            @JoinColumn(name = "`SUBJECT_ID`", referencedColumnName = "`SUBJECT_ID`", insertable = false, updatable = false)        })
+    public AcademicTestSubjects getAcademicTestSubjects() {
+        return this.academicTestSubjects;
+    }
+
+    public void setAcademicTestSubjects(AcademicTestSubjects academicTestSubjects) {
+        if(academicTestSubjects != null) {
+            this.academicYear = academicTestSubjects.getAcademicYear();
+            this.standard = academicTestSubjects.getStandard();
+            this.testId = academicTestSubjects.getTestId();
+            this.subjectId = academicTestSubjects.getSubjectId();
+        }
+
+        this.academicTestSubjects = academicTestSubjects;
     }
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -102,22 +146,17 @@ public class Results implements Serializable {
     }
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumns({
-            @JoinColumn(name = "`STUDENT_ID`", referencedColumnName = "`STUDENT_ID`", insertable = false, updatable = false),
-            @JoinColumn(name = "`ACADEMIC_YEAR`", referencedColumnName = "`ACADEMIC_YEAR`", insertable = false, updatable = false),
-            @JoinColumn(name = "`STANDARD`", referencedColumnName = "`STANDARD`", insertable = false, updatable = false)        })
-    public StudentAcademics getStudentAcademics() {
-        return this.studentAcademics;
+    @JoinColumn(name = "`STUDENT_ID`", referencedColumnName = "`STUDENT_ID`", insertable = false, updatable = false)
+    public StudentDetails getStudentDetails() {
+        return this.studentDetails;
     }
 
-    public void setStudentAcademics(StudentAcademics studentAcademics) {
-        if(studentAcademics != null) {
-            this.studentId = studentAcademics.getStudentId();
-            this.academicYear = studentAcademics.getAcademicYear();
-            this.standard = studentAcademics.getStandard();
+    public void setStudentDetails(StudentDetails studentDetails) {
+        if(studentDetails != null) {
+            this.studentId = studentDetails.getStudentId();
         }
 
-        this.studentAcademics = studentAcademics;
+        this.studentDetails = studentDetails;
     }
 
     @Override
@@ -128,7 +167,9 @@ public class Results implements Serializable {
         return Objects.equals(getAcademicYear(), results.getAcademicYear()) &&
                 Objects.equals(getStandard(), results.getStandard()) &&
                 Objects.equals(getStudentId(), results.getStudentId()) &&
-                Objects.equals(getGradeId(), results.getGradeId());
+                Objects.equals(getGradeId(), results.getGradeId()) &&
+                Objects.equals(getTestId(), results.getTestId()) &&
+                Objects.equals(getSubjectId(), results.getSubjectId());
     }
 
     @Override
@@ -136,7 +177,9 @@ public class Results implements Serializable {
         return Objects.hash(getAcademicYear(),
                 getStandard(),
                 getStudentId(),
-                getGradeId());
+                getGradeId(),
+                getTestId(),
+                getSubjectId());
     }
 }
 

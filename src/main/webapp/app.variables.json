@@ -24,7 +24,7 @@
     "pageName" : "Main"
   },
   "goToPage_Page1" : {
-    "_id" : "wm-goToPage_Page1-wm.NavigationVariable-1474375378559",
+    "_id" : "wm-goToPage_Page1-wm.NavigationVariable-1474605539967",
     "name" : "goToPage_Page1",
     "owner" : "App",
     "category" : "wm.NavigationVariable",
@@ -34,49 +34,89 @@
     "dataSet" : [ ],
     "pageTransitions" : "none"
   },
-  "goToPage_Page2" : {
-    "_id" : "wm-goToPage_Page2-wm.NavigationVariable-1474375771396",
-    "name" : "goToPage_Page2",
+  "goToPage_StudentDetails" : {
+    "_id" : "wm-goToPage_StudentDetails-wm.NavigationVariable-1474525812143",
+    "name" : "goToPage_StudentDetails",
     "owner" : "App",
     "category" : "wm.NavigationVariable",
     "dataBinding" : [ ],
     "operation" : "gotoPage",
-    "pageName" : "Page2",
+    "pageName" : "StudentDetails",
     "dataSet" : [ ],
     "pageTransitions" : "none"
   },
-  "goToPage_Page4" : {
-    "_id" : "wm-goToPage_Page4-wm.NavigationVariable-1474378071218",
-    "name" : "goToPage_Page4",
+  "goToPage_StudentResults" : {
+    "_id" : "wm-goToPage_StudentResults-wm.NavigationVariable-1474622783668",
+    "name" : "goToPage_StudentResults",
     "owner" : "App",
     "category" : "wm.NavigationVariable",
     "dataBinding" : [ ],
     "operation" : "gotoPage",
-    "pageName" : "Page4",
+    "pageName" : "StudentResults",
     "dataSet" : [ ],
     "pageTransitions" : "none"
   },
-  "goToPage_page5" : {
-    "_id" : "wm-goToPage_page5-wm.NavigationVariable-1474380185480",
-    "name" : "goToPage_page5",
+  "loggedInUser" : {
+    "_id" : "wm-loggedInUser-wm.Variable-1474548140124",
+    "name" : "loggedInUser",
     "owner" : "App",
-    "category" : "wm.NavigationVariable",
+    "category" : "wm.Variable",
     "dataBinding" : [ ],
-    "operation" : "gotoPage",
-    "pageName" : "page5",
-    "dataSet" : [ ],
-    "pageTransitions" : "none"
+    "dataSet" : {
+      "name" : "",
+      "id" : "",
+      "tenantId" : "",
+      "isAuthenticated" : false,
+      "isSecurityEnabled" : true,
+      "roles" : [ ]
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
   },
-  "goToPage_Page6" : {
-    "_id" : "wm-goToPage_Page6-wm.NavigationVariable-1474516863424",
-    "name" : "goToPage_Page6",
+  "loginVariable" : {
+    "_id" : "wm-loginVariable-wm.LoginVariable-1474548140123",
+    "name" : "loginVariable",
     "owner" : "App",
-    "category" : "wm.NavigationVariable",
-    "dataBinding" : [ ],
-    "operation" : "gotoPage",
-    "pageName" : "Page6",
-    "dataSet" : [ ],
-    "pageTransitions" : "none"
+    "category" : "wm.LoginVariable",
+    "dataBinding" : [ {
+      "target" : "username",
+      "value" : "bind:Widgets.usernametext.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "password",
+      "value" : "bind:Widgets.passwordtext.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "rememberme",
+      "value" : "bind:Widgets.remembermecheck.datavalue",
+      "type" : "boolean"
+    } ],
+    "dataSet" : {
+      "username" : "",
+      "password" : "",
+      "rememberme" : false
+    },
+    "type" : "string",
+    "saveInPhonegap" : false,
+    "onError" : "loginVariableonError($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "useDefaultSuccessHandler" : true
+  },
+  "logoutVariable" : {
+    "_id" : "wm-logoutVariable-wm.LogoutVariable-1474548140124",
+    "name" : "logoutVariable",
+    "owner" : "App",
+    "category" : "wm.LogoutVariable",
+    "type" : "string",
+    "saveInPhonegap" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "redirectTo" : "Login",
+    "useDefaultSuccessHandler" : true
   },
   "supportedLocale" : {
     "_id" : "wm-wm.Variable1402640443182",

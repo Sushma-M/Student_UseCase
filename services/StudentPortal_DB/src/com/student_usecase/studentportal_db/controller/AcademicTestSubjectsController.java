@@ -28,6 +28,7 @@ import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiParam;
 import com.student_usecase.studentportal_db.AcademicTestSubjects;
 import com.student_usecase.studentportal_db.AcademicTestSubjectsId;
+import com.student_usecase.studentportal_db.Results;
 import com.student_usecase.studentportal_db.service.AcademicTestSubjectsService;
 
 /**
@@ -129,6 +130,14 @@ public class AcademicTestSubjectsController {
     public Long countAcademicTestSubjects(@ApiParam("conditions to filter the results") @RequestParam(value = "q", required = false) String query) {
         LOGGER.debug("counting AcademicTestSubjects");
         return academicTestSubjectsService.count(query);
+    }
+
+    @RequestMapping(value = "/composite-id/resultses", method = RequestMethod.GET)
+    @ApiOperation(value = "Gets the resultses instance associated with the given composite-id.")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<Results> findAssociatedResultses(@RequestParam(value = "academicYear", required = true) Date academicYear, @RequestParam(value = "standard", required = true) String standard, @RequestParam(value = "testId", required = true) Integer testId, @RequestParam(value = "subjectId", required = true) Integer subjectId, Pageable pageable) {
+        LOGGER.debug("Fetching all associated resultses");
+        return academicTestSubjectsService.findAssociatedResultses(academicYear, standard, testId, subjectId, pageable);
     }
 
     /**

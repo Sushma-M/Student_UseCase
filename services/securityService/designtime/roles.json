@@ -1,0 +1,13 @@
+[ {
+  "name" : "student",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "StudentDetails"
+  }
+}, {
+  "name" : "management",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+} ]
