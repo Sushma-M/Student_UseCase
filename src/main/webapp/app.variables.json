@@ -23,14 +23,36 @@
     "operation" : "gotoPage",
     "pageName" : "Main"
   },
+  "goToPage_ManagementPage" : {
+    "_id" : "wm-goToPage_ManagementPage-wm.NavigationVariable-1474878895293",
+    "name" : "goToPage_ManagementPage",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "ManagementPage",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
   "goToPage_Page1" : {
-    "_id" : "wm-goToPage_Page1-wm.NavigationVariable-1474605539967",
+    "_id" : "wm-goToPage_Page1-wm.NavigationVariable-1474874964416",
     "name" : "goToPage_Page1",
     "owner" : "App",
     "category" : "wm.NavigationVariable",
     "dataBinding" : [ ],
     "operation" : "gotoPage",
     "pageName" : "Page1",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_Page2" : {
+    "_id" : "wm-goToPage_Page2-wm.NavigationVariable-1474887891340",
+    "name" : "goToPage_Page2",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "Page2",
     "dataSet" : [ ],
     "pageTransitions" : "none"
   },
@@ -42,17 +64,6 @@
     "dataBinding" : [ ],
     "operation" : "gotoPage",
     "pageName" : "StudentDetails",
-    "dataSet" : [ ],
-    "pageTransitions" : "none"
-  },
-  "goToPage_StudentResults" : {
-    "_id" : "wm-goToPage_StudentResults-wm.NavigationVariable-1474622783668",
-    "name" : "goToPage_StudentResults",
-    "owner" : "App",
-    "category" : "wm.NavigationVariable",
-    "dataBinding" : [ ],
-    "operation" : "gotoPage",
-    "pageName" : "StudentResults",
     "dataSet" : [ ],
     "pageTransitions" : "none"
   },
@@ -117,6 +128,29 @@
     "transformationRequired" : false,
     "redirectTo" : "Login",
     "useDefaultSuccessHandler" : true
+  },
+  "StVar_LeftNav" : {
+    "_id" : "wm-StVar_LeftNav-wm.Variable-1474905657888",
+    "name" : "StVar_LeftNav",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "label" : "Home",
+      "icon" : "glyphicon glyphicon-home",
+      "link" : "#/Main"
+    }, {
+      "label" : "Page1",
+      "icon" : "wi wi-ellipsis-v",
+      "link" : "#/partials_StandardDetails"
+    }, {
+      "label" : "Page2",
+      "icon" : "glyphicon glyphicon-chevron-right",
+      "link" : "#/Page2"
+    } ],
+    "type" : "string",
+    "isList" : true,
+    "saveInPhonegap" : false
   },
   "supportedLocale" : {
     "_id" : "wm-wm.Variable1402640443182",

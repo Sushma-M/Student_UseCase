@@ -1,4 +1,4 @@
-Application.$controller("StudentResultsPageController", ["$scope", function ($scope) {
+Application.$controller("partials_StandardDetailsPageController", ["$scope", function ($scope) {
     "use strict";
 
     /* perform any action on widgets/variables within this block */

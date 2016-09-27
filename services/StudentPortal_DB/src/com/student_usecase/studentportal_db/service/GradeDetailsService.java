@@ -50,6 +50,14 @@ public interface GradeDetailsService {
 	 */
 	GradeDetails findById(Integer gradedetailsId);
 
+    /**
+	 * Find and return the GradeDetails for given minValue  if exists.
+	 *
+	 * @param minValue value of minValue; value cannot be null.
+	 * @return GradeDetails associated with the given inputs.
+     * @throws EntityNotFoundException if no matching GradeDetails found.
+	 */
+    GradeDetails getByMinValue(Integer minValue)throws EntityNotFoundException;
 
 	/**
 	 * Updates the details of an existing GradeDetails. It replaces all fields of the existing GradeDetails with the given gradeDetails.

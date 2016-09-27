@@ -124,7 +124,7 @@
     }
   }, {
     "name" : "SV_TestQuery",
-    "query" : "select STUDENT_ID,STUDENT_NAME,FATHER_NAME,CONTACT_NUMBER from STUDENT_DETAILS",
+    "query" : "select STUDENT_ID,STUDENT_NAME,FATHER_NAME,CONTACT_NUMBER,JOINING_DATE from STUDENT_DETAILS",
     "comment" : "cubgjnhj",
     "description" : null,
     "nativeSql" : true,
@@ -135,6 +135,7 @@
     "returnTypeMetadata" : {
       "CONTACT_NUMBER" : "java.math.BigInteger",
       "FATHER_NAME" : "java.lang.String",
+      "JOINING_DATE" : "java.sql.Date",
       "STUDENT_ID" : "java.lang.Integer",
       "STUDENT_NAME" : "java.lang.String"
     }

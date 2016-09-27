@@ -28,7 +28,7 @@
   </sql-query>
   <sql-query name="SV_TestQuery">
     <![CDATA[
-      select STUDENT_ID,STUDENT_NAME,FATHER_NAME,CONTACT_NUMBER from STUDENT_DETAILS
+      select STUDENT_ID,STUDENT_NAME,FATHER_NAME,CONTACT_NUMBER,JOINING_DATE from STUDENT_DETAILS
     ]]>
   </sql-query>
 </hibernate-mapping>

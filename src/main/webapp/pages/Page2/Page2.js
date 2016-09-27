@@ -1,4 +1,4 @@
-Application.$controller("Page1PageController", ["$scope", function($scope) {
+Application.$controller("Page2PageController", ["$scope", function($scope) {
     "use strict";
 
     /* perform any action on widgets/variables within this block */
@@ -15,9 +15,11 @@ Application.$controller("Page1PageController", ["$scope", function($scope) {
     };
 
 
-    $scope.text1Change = function($event, $isolateScope, newVal, oldVal) {
-        debugger;
-        $scope.Widgets.text1.datavalue = $scope.Variables.staticVariable2.dataSet.dataValue;
+    $scope.livelist1groupby = function(rowData) {
+        return 'Standard:- ' + rowData.standard + ' Year:-' + rowData.academicYear;
+        /*
+         * this function is iterated over each data object in the livelist dataSet collection the data will be grouped by what is returned from this function E.g. to group a collection of CGPA details under rounded figure CGPA return following return Math.floor(dataObject.cgpa)
+         */
     };
 
 }]);

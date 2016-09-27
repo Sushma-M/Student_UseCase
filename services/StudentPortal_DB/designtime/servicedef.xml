@@ -85,6 +85,7 @@
         <dataobject javaType="StudentPortal_DBSV_TestQueryrtnType">
             <element name="CONTACT_NUMBER" typeRef="java.math.BigInteger"/>
             <element name="FATHER_NAME" typeRef="java.lang.String"/>
+            <element name="JOINING_DATE" typeRef="java.sql.Date"/>
             <element name="STUDENT_ID" typeRef="java.lang.Integer"/>
             <element name="STUDENT_NAME" typeRef="java.lang.String"/>
         </dataobject>
@@ -121,6 +122,8 @@
             <element name="grade" typeRef="java.lang.String" allowNull="true"/>
             <element name="gradeId" typeRef="java.lang.Integer" allowNull="true"/>
             <element name="gradeRange" typeRef="java.lang.String" allowNull="true"/>
+            <element name="maxValue" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="minValue" typeRef="java.lang.Integer" allowNull="true"/>
             <element name="resultses" typeRef="com.student_usecase.studentportal_db.Results" isList="true" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.student_usecase.studentportal_db.Results">

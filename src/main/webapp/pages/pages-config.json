@@ -11,15 +11,19 @@
   "type" : "PAGE",
   "params" : [ ]
 }, {
+  "name" : "ManagementPage",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
   "name" : "Page1",
   "type" : "PAGE",
   "params" : [ ]
 }, {
-  "name" : "StudentDetails",
+  "name" : "Page2",
   "type" : "PAGE",
   "params" : [ ]
 }, {
-  "name" : "StudentResults",
+  "name" : "StudentDetails",
   "type" : "PAGE",
   "params" : [ ]
 }, {
@@ -33,6 +37,10 @@
 }, {
   "name" : "leftnav",
   "type" : "LEFTNAV",
+  "params" : [ ]
+}, {
+  "name" : "partials_StandardDetails",
+  "type" : "PARTIAL",
   "params" : [ ]
 }, {
   "name" : "rightnav",

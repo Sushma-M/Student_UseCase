@@ -1,0 +1,60 @@
+{
+  "StandardDetailsData" : {
+    "_id" : "wm-StandardDetailsData-wm.LiveVariable-1474905790564",
+    "name" : "StandardDetailsData",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "StandardDetails",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "transformationRequired" : false,
+    "liveSource" : "StudentPortal_DB",
+    "ignoreCase" : false,
+    "matchMode" : "start",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "standardId",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "STANDARD_ID",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "standardName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "STANDARD_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      } ],
+      "entityName" : "StandardDetails",
+      "fullyQualifiedName" : "com.student_usecase.studentportal_db.StandardDetails",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "standardId" ]
+    },
+    "tableName" : "STANDARD_DETAILS",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "package" : "com.student_usecase.studentportal_db.StandardDetails"
+  }
+}

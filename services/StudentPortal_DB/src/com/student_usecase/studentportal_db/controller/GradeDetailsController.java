@@ -84,6 +84,13 @@ public class GradeDetailsController {
         return deletedGradeDetails != null;
     }
 
+    @RequestMapping(value = "/minValue/{minValue}", method = RequestMethod.GET)
+    @ApiOperation(value = "Returns the matching GradeDetails with given unique key values.")
+    public GradeDetails getByMinValue(@PathVariable("minValue") Integer minValue) {
+        LOGGER.debug("Getting GradeDetails with uniques key MinValue");
+        return gradeDetailsService.getByMinValue(minValue);
+    }
+
     /**
      * @deprecated Use {@link #findGradeDetails(String, Pageable)} instead.
      */
