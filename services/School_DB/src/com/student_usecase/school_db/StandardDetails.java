@@ -45,7 +45,7 @@ public class StandardDetails implements Serializable {
         this.standardId = standardId;
     }
 
-    @Column(name = "`STANDARD_CODE`", nullable = true, length = 255)
+    @Column(name = "`STANDARD_CODE`", nullable = false, length = 255)
     public String getStandardCode() {
         return this.standardCode;
     }
@@ -54,7 +54,7 @@ public class StandardDetails implements Serializable {
         this.standardCode = standardCode;
     }
 
-    @Column(name = "`STANDARD_NAME`", nullable = true, length = 255)
+    @Column(name = "`STANDARD_NAME`", nullable = false, length = 255)
     public String getStandardName() {
         return this.standardName;
     }

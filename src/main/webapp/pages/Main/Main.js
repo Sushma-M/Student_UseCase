@@ -13,19 +13,32 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
          * '$scope.Widgets.username.datavalue'
          */
     };
-    $scope.txt_subjectNameChange = function($event, $isolateScope, newVal, oldVal) {
-        debugger;
-        var subName = $scope.Widgets.txt_subjectName.datavalue;
-        $scope.Variables.SchoolDB_SubjectDetails.setInput('subjectName', subName);
-        $scope.Variables.SchoolDB_SubjectDetails.createRecord();
-        $scope.Variables.School_DB_SubjectDetailsData.listRecords();
-        $scope.Widgets.composite_subjectName.show = false;
-    };
+    // $scope.txt_subjectNameChange = function($event, $isolateScope, newVal, oldVal) {
+    //     debugger;
+    //     var subName = $scope.Widgets.txt_subjectName.datavalue;
+    //     $scope.Variables.LV_InsertSubjectDetails.setInput('subjectName', subName);
+    //     $scope.Variables.LV_InsertSubjectDetails.createRecord();
+    //     $scope.Variables.School_DB_SubjectDetailsData.listRecords();
+    //     $scope.Widgets.composite_subjectName.show = false;
+    // };
 
 
     $scope.button_addsubjectClick = function($event, $isolateScope) {
         $scope.Widgets.composite_subjectName.show = true;
+        $scope.Widgets.button_addNew.show = true;
+        $scope.Widgets.button_addsubject.show = false;
     };
+
+
+    $scope.button_addNewClick = function($event, $isolateScope) {
+        debugger;
+        $scope.Variables.LV_InsertSubjectDetails.createRecord();
+        $scope.Widgets.txt_subjectName.datavalue = '';
+        $scope.Widgets.composite_subjectName.show = false;
+        $scope.Widgets.button_addNew.show = false;
+        $scope.Widgets.button_addsubject.show = true;
+    };
+
 
 }]);
 
@@ -50,7 +63,7 @@ Application.$controller("liveform_academicYearController", ["$scope",
         $scope.ctrlScope = $scope;
 
         $scope.startYearChange = function($event, $isolateScope, newVal, oldVal) {
-            debugger;
+            //debugger;
             var acStartYear = $scope.Widgets.startYear.datavalue;
             $scope.Widgets.endYear.datavalue = acStartYear + 1;
             var acEndYear = $scope.Widgets.endYear.datavalue;
@@ -100,7 +113,7 @@ Application.$controller("liveform_gradeDetailsController", ["$scope",
                 if ($scope.Widgets.minValue.datavalue < maxRangeValue && $scope.Widgets.minValue.datavalue < gradeLevelMinValue) {
                     continue;
                 } else {
-                    $scope.Widgets.minValue.setValidationMessage('Enter Valid Range');
+                    $scope.Widgets.minValue.setValidationMessage('Entered Value ' + $scope.Widgets.minValue.datavalue + ' overlaps in Grade: ' + gradeData[i].grade);
                     break;
                 }
             }
@@ -127,12 +140,12 @@ Application.$controller("liveform_gradeDetailsController", ["$scope",
             var gradeData1 = $scope.Variables.School_DB_GradeDetailsData.dataSet.data;
             var len1 = gradeData1.length;
             for (var j = 0; j < len1; j++) {
-                var maxRangeValue = gradeData1[j].minValue - 1;
-                var gradeLevelMinValue = gradeData1[j].minValue;
-                if ($scope.Widgets.maxValue.datavalue <= maxRangeValue && $scope.Widgets.maxValue.datavalue < gradeLevelMinValue) {
+                var maxRangeValue1 = gradeData1[j].minValue - 1;
+                var gradeLevelMinValue1 = gradeData1[j].minValue;
+                if ($scope.Widgets.maxValue.datavalue <= maxRangeValue1 && $scope.Widgets.maxValue.datavalue < gradeLevelMinValue1) {
                     continue;
                 } else {
-                    $scope.Widgets.minValue.setValidationMessage('Enter Valid Range');
+                    $scope.Widgets.minValue.setValidationMessage('Entered Value ' + $scope.Widgets.maxValue.datavalue + ' overlaps in Grade: ' + gradeData[i].grade);
                     break;
                 }
             }

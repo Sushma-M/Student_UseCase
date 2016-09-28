@@ -57,7 +57,7 @@ public class ResultsController {
     @ApiOperation(value = "Returns the Results instance associated with the given composite-id.")
     @RequestMapping(value = "/composite-id", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public Results getResults(@RequestParam("academicYear") String academicYear, @RequestParam("standardId") Integer standardId, @RequestParam("studentId") Integer studentId, @RequestParam("gradeId") Integer gradeId, @RequestParam("testId") Integer testId, @RequestParam("subjectId") Integer subjectId) throws EntityNotFoundException {
+    public Results getResults(@RequestParam(value = "academicYear", required = true) String academicYear, @RequestParam(value = "standardId", required = true) Integer standardId, @RequestParam(value = "studentId", required = true) Integer studentId, @RequestParam(value = "gradeId", required = true) Integer gradeId, @RequestParam(value = "testId", required = true) Integer testId, @RequestParam(value = "subjectId", required = true) Integer subjectId) throws EntityNotFoundException {
         ResultsId resultsId = new ResultsId();
         resultsId.setAcademicYear(academicYear);
         resultsId.setStandardId(standardId);
@@ -74,7 +74,7 @@ public class ResultsController {
     @ApiOperation(value = "Updates the Results instance associated with the given composite-id.")
     @RequestMapping(value = "/composite-id", method = RequestMethod.PUT)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public Results editResults(@RequestParam("academicYear") String academicYear, @RequestParam("standardId") Integer standardId, @RequestParam("studentId") Integer studentId, @RequestParam("gradeId") Integer gradeId, @RequestParam("testId") Integer testId, @RequestParam("subjectId") Integer subjectId, @RequestBody Results results) throws EntityNotFoundException {
+    public Results editResults(@RequestParam(value = "academicYear", required = true) String academicYear, @RequestParam(value = "standardId", required = true) Integer standardId, @RequestParam(value = "studentId", required = true) Integer studentId, @RequestParam(value = "gradeId", required = true) Integer gradeId, @RequestParam(value = "testId", required = true) Integer testId, @RequestParam(value = "subjectId", required = true) Integer subjectId, @RequestBody Results results) throws EntityNotFoundException {
         results.setAcademicYear(academicYear);
         results.setStandardId(standardId);
         results.setStudentId(studentId);
@@ -88,7 +88,7 @@ public class ResultsController {
     @ApiOperation(value = "Deletes the Results instance associated with the given composite-id.")
     @RequestMapping(value = "/composite-id", method = RequestMethod.DELETE)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public boolean deleteResults(@RequestParam("academicYear") String academicYear, @RequestParam("standardId") Integer standardId, @RequestParam("studentId") Integer studentId, @RequestParam("gradeId") Integer gradeId, @RequestParam("testId") Integer testId, @RequestParam("subjectId") Integer subjectId) throws EntityNotFoundException {
+    public boolean deleteResults(@RequestParam(value = "academicYear", required = true) String academicYear, @RequestParam(value = "standardId", required = true) Integer standardId, @RequestParam(value = "studentId", required = true) Integer studentId, @RequestParam(value = "gradeId", required = true) Integer gradeId, @RequestParam(value = "testId", required = true) Integer testId, @RequestParam(value = "subjectId", required = true) Integer subjectId) throws EntityNotFoundException {
         ResultsId resultsId = new ResultsId();
         resultsId.setAcademicYear(academicYear);
         resultsId.setStandardId(standardId);

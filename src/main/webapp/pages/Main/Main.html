@@ -28,7 +28,7 @@
                                 </wm-gridrow>
                                 <wm-gridrow name="gridrow1">
                                     <wm-gridcolumn name="gridcolumn1" columnwidth="6">
-                                        <wm-form-field name="academicYear" displayname="Academic Year" show="true" primary-key="true" generator="assigned" key="academicYear" type="string" required="required" widget="text" maxchars="255" disabled="true"></wm-form-field>
+                                        <wm-form-field name="academicYear" displayname="Academic Year" show="true" primary-key="true" generator="assigned" key="academicYear" type="string" required="false" widget="text" maxchars="255" disabled="true"></wm-form-field>
                                     </wm-gridcolumn>
                                 </wm-gridrow>
                             </wm-layoutgrid>
@@ -51,12 +51,14 @@
                             <wm-layoutgrid columns="1" name="layoutgrid8">
                                 <wm-gridrow name="gridrow13_1">
                                     <wm-gridcolumn columnwidth="12" name="gridcolumn20">
-                                        <wm-form-field name="standardCode" displayname="Standard Code" show="true" primary-key="false" generator="assigned" key="standardCode" type="string" widget="text" inputtype="text" placeholder="Enter value" updateon="default"></wm-form-field>
+                                        <wm-form-field name="standardCode" displayname="Standard Code" show="true" primary-key="false" generator="assigned" key="standardCode" type="string" widget="text" inputtype="text" placeholder="Enter value" updateon="default"
+                                        required="true"></wm-form-field>
                                     </wm-gridcolumn>
                                 </wm-gridrow>
                                 <wm-gridrow name="gridrow14">
                                     <wm-gridcolumn columnwidth="12" name="gridcolumn21">
-                                        <wm-form-field name="standardName" displayname="Standard Name" show="true" primary-key="false" generator="assigned" key="standardName" type="string" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field>
+                                        <wm-form-field name="standardName" displayname="Standard Name" show="true" primary-key="false" generator="assigned" key="standardName" type="string" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"
+                                        required="true"></wm-form-field>
                                     </wm-gridcolumn>
                                 </wm-gridrow>
                             </wm-layoutgrid>
@@ -71,13 +73,25 @@
                     <wm-layoutgrid name="layoutgrid7">
                         <wm-gridrow name="gridrow12">
                             <wm-gridcolumn columnwidth="6" name="gridcolumn21_2" horizontalalign="right">
-                                <wm-button class="btn-default" caption="Add New Record" type="button" margin="unset unset unset 0.5em" name="button_addsubject" iconclass="wi wi-plus" on-click="button_addsubjectClick($event, $scope)"></wm-button>
-                                <wm-composite name="composite_subjectName" horizontalalign="left" show="false">
-                                    <wm-label class="col-md-3 control-label" name="label3" caption="Subject Name:"></wm-label>
-                                    <wm-container class="col-md-9" name="container2_1">
-                                        <wm-text name="txt_subjectName" on-change="txt_subjectNameChange($event, $scope, newVal, oldVal)"></wm-text>
-                                    </wm-container>
-                                </wm-composite>
+                                <wm-button class="btn-default" caption="Add New Record" type="button" margin="unset unset unset 0.5em" name="button_addsubject" iconclass="wi wi-plus" on-click="button_addsubjectClick($event, $scope)" show="true"></wm-button>
+                                <wm-layoutgrid name="layoutgrid6">
+                                    <wm-gridrow name="gridrow11">
+                                        <wm-gridcolumn columnwidth="10" name="gridcolumn19_1">
+                                            <wm-composite name="composite_subjectName" horizontalalign="left" show="false" width="25em" padding="1.5em unset unset unset">
+                                                <wm-container class="col-md-9" name="container2_1">
+                                                    <wm-text name="txt_subjectName" placeholder="Subject Name"></wm-text>
+                                                </wm-container>
+                                            </wm-composite>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="2" name="gridcolumn20_3">
+                                            <wm-button class="btn-default" caption="Add" type="button" name="button_addNew" on-click="button_addNewClick($event, $scope)" iconclass="wi wi-plus" show="false" margin="1.5em unset unset unset"></wm-button>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow12_2">
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn21_4"></wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn22_1"></wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
                             </wm-gridcolumn>
                             <wm-gridcolumn columnwidth="6" name="gridcolumn22"></wm-gridcolumn>
                         </wm-gridrow>
@@ -88,11 +102,13 @@
                                         <wm-container class="media-body" padding="unset unset unset 1.25em" name="container2">
                                             <wm-layoutgrid name="layoutgrid5_2">
                                                 <wm-gridrow name="gridrow8_1">
-                                                    <wm-gridcolumn columnwidth="4" name="gridcolumn13_1">
-                                                        <wm-label name="lbl_subjectName" caption="SUBJECT NAME:" class="p"></wm-label>
-                                                    </wm-gridcolumn>
                                                     <wm-gridcolumn columnwidth="8" name="gridcolumn14_1">
                                                         <wm-label name="lbl_SubjectName" class="p media-heading" caption="bind:Variables.School_DB_SubjectDetailsData.dataSet.subjectName" fontsize="1.143" fontunit="em"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="4" name="gridcolumn16">
+                                                        <wm-container class="media-right media-top" name="container5">
+                                                            <wm-button class="btn-transparent" iconclass="wi wi-trash" fontsize="18" fontunit="pt" name="button2" on-click="Variables.LV_DeleteSubjects.deleteRecord()"></wm-button>
+                                                        </wm-container>
                                                     </wm-gridcolumn>
                                                 </wm-gridrow>
                                             </wm-layoutgrid>
@@ -102,17 +118,31 @@
                             </wm-gridcolumn>
                             <wm-gridcolumn columnwidth="6" name="gridcolumn25"></wm-gridcolumn>
                         </wm-gridrow>
+                        <wm-gridrow name="gridrow10">
+                            <wm-gridcolumn columnwidth="6" name="gridcolumn17"></wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="6" name="gridcolumn18_1"></wm-gridcolumn>
+                        </wm-gridrow>
                     </wm-layoutgrid>
                 </wm-tabpane>
                 <wm-tabpane name="tabpane3" title="Test Details">
-                    <wm-grid editmode="inline" title="TEST DETAILS" dataset="bind:Variables.School_DB_TestDetailsData.dataSet" navigation="None" name="grid_testDetails">
-                        <wm-grid-column binding="testId" caption="Test Id" type="integer" primary-key="true" generator="assigned" readonly="true" edit-widget-type="number" show="true"></wm-grid-column>
-                        <wm-grid-column binding="testName" caption="Test Name" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
-                        <wm-grid-column binding="rowOperations" caption="Actions" type="custom" width="120px" readonly="true" sortable="false" searchable="false" show="true"></wm-grid-column>
-                        <wm-grid-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" shortcutkey="" disabled="false"></wm-grid-action>
-                        <wm-grid-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" disabled="false"></wm-grid-row-action>
-                        <wm-grid-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" disabled="false"></wm-grid-row-action>
-                    </wm-grid>
+                    <wm-layoutgrid name="layoutgrid7_2">
+                        <wm-gridrow name="gridrow13_3">
+                            <wm-gridcolumn columnwidth="8" name="gridcolumn22_2">
+                                <wm-grid editmode="inline" title="TEST DETAILS" dataset="bind:Variables.School_DB_TestDetailsData.dataSet" navigation="None" name="grid_testDetails">
+                                    <wm-grid-column binding="testName" caption="Test Name" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                    <wm-grid-column binding="rowOperations" caption="Actions" type="custom" width="120px" readonly="true" edit-widget-type="text" sortable="false" searchable="false" show="true"></wm-grid-column>
+                                    <wm-grid-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" shortcutkey="" disabled="false"></wm-grid-action>
+                                    <wm-grid-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" disabled="false"></wm-grid-row-action>
+                                    <wm-grid-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" disabled="false"></wm-grid-row-action>
+                                </wm-grid>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn23_1"></wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow14_1">
+                            <wm-gridcolumn columnwidth="6" name="gridcolumn24"></wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="6" name="gridcolumn25_1"></wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
                 </wm-tabpane>
                 <wm-tabpane name="tabpane4" title="Grade Details">
                     <wm-livegrid formlayout="inline" name="livegrid_gradeDetails">
@@ -124,7 +154,8 @@
                             <wm-grid-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" disabled="false"></wm-grid-row-action>
                             <wm-grid-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" disabled="false"></wm-grid-row-action>
                         </wm-grid>
-                        <wm-liveform novalidate="false" title="Grade_details Info" formlayout="inline" iconclass="wi wi-edit" dataset="bind:Variables.School_DB_GradeDetailsData.dataSet" captionalign="left" captionposition="top" name="liveform_gradeDetails">
+                        <wm-liveform novalidate="false" title="Grade_details Info" formlayout="inline" iconclass="wi wi-edit" dataset="bind:Variables.School_DB_GradeDetailsData.dataSet" captionalign="left" captionposition="top" name="liveform_gradeDetails"
+                        on-beforeservicecall="liveform_gradeDetailsBeforeservicecall($event, $operation, $data)">
                             <wm-layoutgrid columns="2" name="layoutgrid7_1">
                                 <wm-gridrow name="gridrow12_1">
                                     <wm-gridcolumn columnwidth="6" name="gridcolumn18">
@@ -133,7 +164,7 @@
                                     </wm-gridcolumn>
                                     <wm-gridcolumn columnwidth="6" name="gridcolumn19">
                                         <wm-form-field name="minValue" displayname="Min Value" required="false" show="true" generator="assigned" primary-key="false" key="minValue" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true"
-                                        widget="number" on-change="minValueChange($event, $scope, newVal, oldVal)"></wm-form-field>
+                                        widget="number"></wm-form-field>
                                     </wm-gridcolumn>
                                 </wm-gridrow>
                                 <wm-gridrow name="gridrow13_2">

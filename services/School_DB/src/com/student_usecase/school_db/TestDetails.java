@@ -44,7 +44,7 @@ public class TestDetails implements Serializable {
         this.testId = testId;
     }
 
-    @Column(name = "`TEST_NAME`", nullable = true, length = 255)
+    @Column(name = "`TEST_NAME`", nullable = false, length = 255)
     public String getTestName() {
         return this.testName;
     }

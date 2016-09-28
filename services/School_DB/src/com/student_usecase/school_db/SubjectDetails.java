@@ -44,7 +44,7 @@ public class SubjectDetails implements Serializable {
         this.subjectId = subjectId;
     }
 
-    @Column(name = "`SUBJECT_NAME`", nullable = true, length = 255)
+    @Column(name = "`SUBJECT_NAME`", nullable = false, length = 255)
     public String getSubjectName() {
         return this.subjectName;
     }

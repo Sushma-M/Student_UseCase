@@ -3,7 +3,7 @@
     <operation operationType="nativequery" name="SV_CountOfStudents">
         <parameter name="standard" typeRef="java.lang.Integer" isList="false"/>
         <parameter name="year" typeRef="java.lang.String" isList="false"/>
-        <return isList="false"/>
+        <return typeRef="School_DBSV_CountOfStudentsrtnType" isList="false"/>
     </operation>
     <operation operationType="nativequery" name="SV_CountOfStudents">
         <parameter name="standard" typeRef="java.lang.Integer" isList="false"/>
@@ -90,6 +90,7 @@
             <element name="dateOfBirth" typeRef="java.util.Date" allowNull="true"/>
             <element name="fatherName" typeRef="java.lang.String" allowNull="true"/>
             <element name="joiningDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="profile" typeRef="java.lang.Byte" isList="true" allowNull="true"/>
             <element name="resultses" typeRef="com.student_usecase.school_db.Results" isList="true" allowNull="true"/>
             <element name="studentAcademicses" typeRef="com.student_usecase.school_db.StudentAcademics" isList="true" allowNull="true"/>
             <element name="studentId" typeRef="java.lang.Integer" allowNull="true"/>

@@ -133,7 +133,8 @@ public class AcademicTestSubjectsController {
 
     @RequestMapping(value = "/composite-id/resultses", method = RequestMethod.GET)
     @ApiOperation(value = "Gets the resultses instance associated with the given composite-id.")
-    public Page<Results> findAssociatedResultses(@RequestParam("academicYear") String academicYear, @RequestParam("standardId") Integer standardId, @RequestParam("testId") Integer testId, @RequestParam("subjectId") Integer subjectId, Pageable pageable) {
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<Results> findAssociatedResultses(@RequestParam(value = "academicYear", required = true) String academicYear, @RequestParam(value = "standardId", required = true) Integer standardId, @RequestParam(value = "testId", required = true) Integer testId, @RequestParam(value = "subjectId", required = true) Integer subjectId, Pageable pageable) {
         LOGGER.debug("Fetching all associated resultses");
         return academicTestSubjectsService.findAssociatedResultses(academicYear, standardId, testId, subjectId, pageable);
     }

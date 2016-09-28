@@ -16,7 +16,7 @@ Application.$controller("ManagementPagePageController", ["$scope", function($sco
 
 
     $scope.livelist_academicSubjectsgroupby = function(rowData) {
-        return 'Standard: ' + rowData.standard + ' Year:' + rowData.academicYear;
+        return 'Standard: ' + rowData.academics.standardDetails.standardName + ' :: Year:' + rowData.academicYear;
         /*
          * this function is iterated over each data object in the livelist dataSet collection the data will be grouped by what is returned from this function E.g. to group a collection of CGPA details under rounded figure CGPA return following return Math.floor(dataObject.cgpa)
          */
@@ -115,17 +115,17 @@ Application.$controller("liveform_studentDetailsController", ["$scope",
 ]);
 
 Application.$controller("dialog4Controller", ["$scope",
-	function($scope) {
-		"use strict";
-		$scope.ctrlScope = $scope;
-	}
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
 ]);
 
 
 
 Application.$controller("liveform4Controller", ["$scope",
-	function($scope) {
-		"use strict";
-		$scope.ctrlScope = $scope;
-	}
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
 ]);
