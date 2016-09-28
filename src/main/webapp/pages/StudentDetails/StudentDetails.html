@@ -9,9 +9,9 @@
                         <wm-gridrow name="gridrow35_1">
                             <wm-gridcolumn columnwidth="7" name="gridcolumn122">
                                 <wm-livegrid formlayout="dialog" name="livegrid2">
-                                    <wm-grid gridfirstrowselect="false" editmode="dialog" title="ACADEMIC TEST SUBJECT DETAILS" dataset="bind:Variables.AcademicTestSubjectsData.dataSet" navigation="Classic" name="grid2">
+                                    <wm-grid gridfirstrowselect="false" editmode="dialog" title="ACADEMIC TEST SUBJECT DETAILS" dataset="bind:Variables.AcademicTestSubjectsData.dataSet" navigation="Classic" name="grid2" navigationalign="left" showrecordcount="true">
                                         <wm-grid-column binding="testDetails.testName" caption="Test Name" type="string" generator="assigned" edit-widget-type="text" show="true" related-entity-name="TestDetails" readonly="false"></wm-grid-column>
-                                        <wm-grid-column binding="examConductedOn" caption="Exam Conducted On" type="date" generator="assigned" edit-widget-type="date" show="true" readonly="false"></wm-grid-column>
+                                        <wm-grid-column binding="examConductedOn" caption="Exam Conducted On" type="date" generator="assigned" datepattern="yyyy, MMM dd" formatpattern="toDate" edit-widget-type="date" show="true" readonly="false"></wm-grid-column>
                                         <wm-grid-column binding="maxMarks" caption="Max Marks" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                                         <wm-grid-column binding="rowOperations" caption="Actions" type="custom" width="120px" readonly="true" edit-widget-type="text" sortable="false" searchable="false" show="true"></wm-grid-column>
                                         <wm-grid-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" accessroles="management" shortcutkey="" disabled="false"></wm-grid-action>
@@ -130,7 +130,8 @@
                                         <wm-grid-column binding="studentDetails.studentId" caption="Student Id" type="integer" generator="assigned" is-related-pk="true" edit-widget-type="number" show="true" related-entity-name="StudentDetails" readonly="false"></wm-grid-column>
                                         <wm-grid-column binding="studentDetails.studentName" caption="Student Name" type="string" generator="assigned" edit-widget-type="text" show="true" related-entity-name="StudentDetails" readonly="false"></wm-grid-column>
                                         <wm-grid-column binding="rollNumber" caption="Roll Number" type="integer" generator="assigned" edit-widget-type="number" show="true" readonly="false"></wm-grid-column>
-                                        <wm-grid-column binding="academics.academicYear" caption="Academic Year" type="date" primary-key="true" generator="assigned" edit-widget-type="date" show="true" related-entity-name="Academics" readonly="false"></wm-grid-column>
+                                        <wm-grid-column binding="academics.academicYear" caption="Academic Year" type="date" primary-key="true" generator="assigned" datepattern="MMM, yyyy" formatpattern="toDate" edit-widget-type="date"
+                                        show="true" related-entity-name="Academics" readonly="false"></wm-grid-column>
                                         <wm-grid-column binding="rowOperations" caption="Actions" type="custom" width="120px" readonly="true" edit-widget-type="text" sortable="false" searchable="false" show="true"></wm-grid-column>
                                         <wm-grid-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" accessroles="management" shortcutkey="" disabled="false"></wm-grid-action>
                                         <wm-grid-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" accessroles="management" disabled="false"></wm-grid-row-action>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <sql-query name="SV_CountOfStudents">
+    <![CDATA[
+      select count(STUDENT_ID),STANDARD_ID from STUDENT_ACADEMICS where STANDARD_ID=:standard and ACADEMIC_YEAR=:year group by STANDARD_ID
+    ]]>
+  </sql-query>
+</hibernate-mapping>

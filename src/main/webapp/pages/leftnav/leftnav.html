@@ -3,14 +3,11 @@
         <wm-nav-item name="list_dashboard" accessroles="management">
             <wm-anchor caption="MASTER DETAILS" name="dashboardLink" iconclass="wi wi-bar-graph" on-click="Variables.goToPage_Main.invoke()"></wm-anchor>
         </wm-nav-item>
-        <wm-nav-item name="list_order">
-            <wm-anchor caption="STUDENT ACADEMICS" name="orderLink" iconclass="wi wi-file" on-click="Variables.goToPage_StudentDetails.invoke()"></wm-anchor>
-        </wm-nav-item>
         <wm-nav-item name="list_inventory" accessroles="management">
             <wm-anchor caption="MANAGEMENT" name="inventoryLink" iconclass="wi wi-tag" on-click="Variables.goToPage_ManagementPage.invoke()"></wm-anchor>
         </wm-nav-item>
-        <wm-nav-item name="nav_item4">
-            <wm-menu caption="Menu" name="menu1" iconclass="wi wi-file" type="anchor" dataset="bind:Variables.StVar_LeftNav.dataSet" itemlabel="label" itemlink="link" itemicon="icon"></wm-menu>
+        <wm-nav-item name="list_order">
+            <wm-anchor caption="STUDENT ACADEMICS" name="orderLink" iconclass="wi wi-file" on-click="Variables.goToPage_StudentDetails.invoke()"></wm-anchor>
         </wm-nav-item>
         <wm-nav-item name="nav_item6">
             <wm-anchor name="anchor4" iconclass="wi wi-file" on-click="Variables.logoutVariable.invoke()" caption="LOGOUT"></wm-anchor>

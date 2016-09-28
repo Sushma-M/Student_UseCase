@@ -15,7 +15,7 @@ Application.$controller("ManagementPagePageController", ["$scope", function($sco
     };
 
 
-    $scope.livelist3groupby = function(rowData) {
+    $scope.livelist_academicSubjectsgroupby = function(rowData) {
         return 'Standard: ' + rowData.standard + ' Year:' + rowData.academicYear;
         /*
          * this function is iterated over each data object in the livelist dataSet collection the data will be grouped by what is returned from this function E.g. to group a collection of CGPA details under rounded figure CGPA return following return Math.floor(dataObject.cgpa)
@@ -25,7 +25,7 @@ Application.$controller("ManagementPagePageController", ["$scope", function($sco
 }]);
 
 
-Application.$controller("grid4Controller", ["$scope",
+Application.$controller("grid_academicsController", ["$scope",
     function($scope) {
         "use strict";
         $scope.ctrlScope = $scope;
@@ -63,41 +63,67 @@ Application.$controller("grid3Controller", ["$scope",
 ]);
 
 Application.$controller("dialog3Controller", ["$scope",
-	function($scope) {
-		"use strict";
-		$scope.ctrlScope = $scope;
-	}
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
 ]);
 
-Application.$controller("liveform7_1Controller", ["$scope",
-	function($scope) {
-		"use strict";
-		$scope.ctrlScope = $scope;
-	}
-]);
 
-Application.$controller("grid1Controller", ["$scope",
-	function($scope) {
-		"use strict";
-		$scope.ctrlScope = $scope;
-	}
-]);
 
-Application.$controller("liveform1Controller", ["$scope",
-	function($scope) {
-		"use strict";
-		$scope.ctrlScope = $scope;
-	}
-]);
+
+
+
 
 Application.$controller("dialog2Controller", ["$scope",
-	function($scope) {
-		"use strict";
-		$scope.ctrlScope = $scope;
-	}
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
 ]);
 
 Application.$controller("grid6_1Controller", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+
+
+
+
+Application.$controller("liveform_academicsController", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+Application.$controller("grid_studentDetailsController", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+Application.$controller("liveform_studentDetailsController", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+Application.$controller("dialog4Controller", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
+
+
+
+Application.$controller("liveform4Controller", ["$scope",
 	function($scope) {
 		"use strict";
 		$scope.ctrlScope = $scope;

@@ -60,7 +60,7 @@ Application.$controller("liveform3Controller", ["$scope",
 
 
         $scope.academicTestSubjectsChange = function($event, $isolateScope, newVal, oldVal) {
-            debugger;
+            //debugger;
             // $scope.Variables.StVar_MarksSecured.dataSet.marksSecured = $scope.Widgets.marksSecured.datavalue;
             // $scope.Variables.StVar_MarksSecured.dataSet.academicTestSubjects = $scope.Widgets.academicTestSubjects.datavalue;
             var acheivedMarks = $scope.Widgets.marksSecured.datavalue;

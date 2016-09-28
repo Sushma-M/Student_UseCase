@@ -56,6 +56,28 @@
     "dataSet" : [ ],
     "pageTransitions" : "none"
   },
+  "goToPage_page4" : {
+    "_id" : "wm-goToPage_page4-wm.NavigationVariable-1474955297430",
+    "name" : "goToPage_page4",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "page4",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_PAGE5" : {
+    "_id" : "wm-goToPage_PAGE5-wm.NavigationVariable-1474968537660",
+    "name" : "goToPage_PAGE5",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "PAGE5",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
   "goToPage_StudentDetails" : {
     "_id" : "wm-goToPage_StudentDetails-wm.NavigationVariable-1474525812143",
     "name" : "goToPage_StudentDetails",

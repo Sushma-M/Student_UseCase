@@ -1,0 +1,33 @@
+{
+  "name" : "School_DB",
+  "description" : "Queries for School_DB",
+  "queries" : [ {
+    "name" : "SV_CountOfStudents",
+    "query" : "select count(STUDENT_ID),STANDARD_ID from STUDENT_ACADEMICS where STANDARD_ID=:standard and ACADEMIC_YEAR=:year group by STANDARD_ID",
+    "comment" : "Count Of Students",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : false,
+    "queryParams" : [ {
+      "paramName" : "standard",
+      "paramType" : "java.lang.Integer",
+      "testValue" : "1",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    }, {
+      "paramName" : "year",
+      "paramType" : "java.lang.String",
+      "testValue" : "2016-2017",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    } ],
+    "outputType" : "School_DBSV_CountOfStudentsrtnType",
+    "returnTypeMetadata" : {
+      "STANDARD_ID" : "java.lang.Integer",
+      "count(STUDENT_ID)" : "java.math.BigInteger"
+    }
+  } ]
+}

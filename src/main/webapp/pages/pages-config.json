@@ -15,6 +15,10 @@
   "type" : "PAGE",
   "params" : [ ]
 }, {
+  "name" : "PAGE5",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
   "name" : "Page1",
   "type" : "PAGE",
   "params" : [ ]
@@ -27,6 +31,10 @@
   "type" : "PAGE",
   "params" : [ ]
 }, {
+  "name" : "fgvbsxgb",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
   "name" : "footer",
   "type" : "FOOTER",
   "params" : [ ]
@@ -37,6 +45,10 @@
 }, {
   "name" : "leftnav",
   "type" : "LEFTNAV",
+  "params" : [ ]
+}, {
+  "name" : "page4",
+  "type" : "PAGE",
   "params" : [ ]
 }, {
   "name" : "partials_StandardDetails",
