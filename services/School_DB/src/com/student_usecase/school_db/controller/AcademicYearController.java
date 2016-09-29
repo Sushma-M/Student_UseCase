@@ -84,6 +84,13 @@ public class AcademicYearController {
         return deletedAcademicYear != null;
     }
 
+    @RequestMapping(value = "/startYear/{startYear}", method = RequestMethod.GET)
+    @ApiOperation(value = "Returns the matching AcademicYear with given unique key values.")
+    public AcademicYear getByStartYear(@PathVariable("startYear") int startYear) {
+        LOGGER.debug("Getting AcademicYear with uniques key StartYear");
+        return academicYearService.getByStartYear(startYear);
+    }
+
     /**
      * @deprecated Use {@link #findAcademicYears(String, Pageable)} instead.
      */

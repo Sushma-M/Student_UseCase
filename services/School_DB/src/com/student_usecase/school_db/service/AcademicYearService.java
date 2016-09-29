@@ -50,6 +50,14 @@ public interface AcademicYearService {
 	 */
 	AcademicYear findById(String academicyearId);
 
+    /**
+	 * Find and return the AcademicYear for given startYear  if exists.
+	 *
+	 * @param startYear value of startYear; value cannot be null.
+	 * @return AcademicYear associated with the given inputs.
+     * @throws EntityNotFoundException if no matching AcademicYear found.
+	 */
+    AcademicYear getByStartYear(int startYear)throws EntityNotFoundException;
 
 	/**
 	 * Updates the details of an existing AcademicYear. It replaces all fields of the existing AcademicYear with the given academicYearInstance.

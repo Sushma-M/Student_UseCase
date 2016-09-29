@@ -19,6 +19,7 @@
     "liveSource" : "School_DB",
     "ignoreCase" : false,
     "matchMode" : "start",
+    "orderBy" : "testId asc",
     "propertiesMap" : {
       "columns" : [ {
         "fieldName" : "testId",

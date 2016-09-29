@@ -34,6 +34,17 @@
     "dataSet" : [ ],
     "pageTransitions" : "none"
   },
+  "goToPage_page1" : {
+    "_id" : "wm-goToPage_page1-wm.NavigationVariable-1475146139142",
+    "name" : "goToPage_page1",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "page1",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
   "goToPage_StudentDetails" : {
     "_id" : "wm-goToPage_StudentDetails-wm.NavigationVariable-1474525812143",
     "name" : "goToPage_StudentDetails",

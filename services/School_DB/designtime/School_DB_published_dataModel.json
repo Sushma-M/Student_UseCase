@@ -206,17 +206,17 @@
       "javaType" : "string",
       "length" : 2,
       "name" : "GRADE",
-      "nullable" : true,
+      "nullable" : false,
       "oldName" : "GRADE",
       "partOfAnyRelation" : false,
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
+      "partOfUniqueKey" : true,
       "precision" : 19,
       "primaryKey" : false,
       "scale" : 0,
       "sqlType" : "string",
-      "unique" : false
+      "unique" : true
     }, {
       "columnValue" : {
         "type" : "user-defined",
@@ -231,7 +231,7 @@
       "javaType" : "integer",
       "length" : 255,
       "name" : "MIN_VALUE",
-      "nullable" : true,
+      "nullable" : false,
       "oldName" : "MIN_VALUE",
       "partOfAnyRelation" : false,
       "partOfForeignKey" : false,
@@ -256,7 +256,7 @@
       "javaType" : "integer",
       "length" : 255,
       "name" : "MAX_VALUE",
-      "nullable" : true,
+      "nullable" : false,
       "oldName" : "MAX_VALUE",
       "partOfAnyRelation" : false,
       "partOfForeignKey" : false,
@@ -268,7 +268,13 @@
       "sqlType" : "number",
       "unique" : false
     } ],
-    "constraints" : [ ],
+    "constraints" : [ {
+      "columns" : [ "GRADE" ],
+      "composite" : false,
+      "name" : "UK_GRADE_DETAILS_GRADE",
+      "type" : "UNIQUE",
+      "virtual" : false
+    } ],
     "entityName" : "GradeDetails",
     "fullyQualifiedName" : "com.student_usecase.school_db.GradeDetails",
     "name" : "GRADE_DETAILS",
@@ -1643,17 +1649,17 @@
       "javaType" : "integer",
       "length" : 255,
       "name" : "START_YEAR",
-      "nullable" : true,
+      "nullable" : false,
       "oldName" : "START_YEAR",
       "partOfAnyRelation" : false,
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
+      "partOfUniqueKey" : true,
       "precision" : 10,
       "primaryKey" : false,
       "scale" : 0,
       "sqlType" : "number",
-      "unique" : false
+      "unique" : true
     }, {
       "columnValue" : {
         "type" : "user-defined",
@@ -1668,7 +1674,7 @@
       "javaType" : "integer",
       "length" : 255,
       "name" : "END_YEAR",
-      "nullable" : true,
+      "nullable" : false,
       "oldName" : "END_YEAR",
       "partOfAnyRelation" : false,
       "partOfForeignKey" : false,
@@ -1680,7 +1686,13 @@
       "sqlType" : "number",
       "unique" : false
     } ],
-    "constraints" : [ ],
+    "constraints" : [ {
+      "columns" : [ "START_YEAR" ],
+      "composite" : false,
+      "name" : "UK_ACADEMIC_YEAR_START_YEAR",
+      "type" : "UNIQUE",
+      "virtual" : false
+    } ],
     "entityName" : "AcademicYear",
     "fullyQualifiedName" : "com.student_usecase.school_db.AcademicYear",
     "name" : "ACADEMIC_YEAR",

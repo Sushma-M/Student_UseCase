@@ -51,6 +51,10 @@
   "type" : "LEFTNAV",
   "params" : [ ]
 }, {
+  "name" : "page1",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
   "name" : "rightnav",
   "type" : "RIGHTNAV",
   "params" : [ ]

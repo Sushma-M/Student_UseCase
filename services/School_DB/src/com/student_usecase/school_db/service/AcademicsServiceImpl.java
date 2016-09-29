@@ -38,12 +38,12 @@ public class AcademicsServiceImpl implements AcademicsService {
     private static final Logger LOGGER = LoggerFactory.getLogger(AcademicsServiceImpl.class);
 
     @Autowired
-	@Qualifier("School_DB.AcademicSubjectsService")
-	private AcademicSubjectsService academicSubjectsService;
-
-    @Autowired
 	@Qualifier("School_DB.StudentAcademicsService")
 	private StudentAcademicsService studentAcademicsService;
+
+    @Autowired
+	@Qualifier("School_DB.AcademicSubjectsService")
+	private AcademicSubjectsService academicSubjectsService;
 
     @Autowired
     @Qualifier("School_DB.AcademicsDao")
@@ -178,19 +178,19 @@ public class AcademicsServiceImpl implements AcademicsService {
     /**
 	 * This setter method should only be used by unit tests
 	 *
-	 * @param service AcademicSubjectsService instance
+	 * @param service StudentAcademicsService instance
 	 */
-	protected void setAcademicSubjectsService(AcademicSubjectsService service) {
-        this.academicSubjectsService = service;
+	protected void setStudentAcademicsService(StudentAcademicsService service) {
+        this.studentAcademicsService = service;
     }
 
     /**
 	 * This setter method should only be used by unit tests
 	 *
-	 * @param service StudentAcademicsService instance
+	 * @param service AcademicSubjectsService instance
 	 */
-	protected void setStudentAcademicsService(StudentAcademicsService service) {
-        this.studentAcademicsService = service;
+	protected void setAcademicSubjectsService(AcademicSubjectsService service) {
+        this.academicSubjectsService = service;
     }
 
 }

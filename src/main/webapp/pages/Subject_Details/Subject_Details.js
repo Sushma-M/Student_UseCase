@@ -15,15 +15,16 @@ Application.$controller("Subject_DetailsPageController", ["$scope", function($sc
     };
 
 
-    // $scope.txt_subjectNameChange = function($event, $isolateScope, newVal, oldVal) {
-    //     debugger;
-    //     // var subjectData = $scope.Widgets.txt_subjectName.datavalue;
-    //     // $scope.Widgets.txt_subjectName.datavalue = subjectData.toUpperCase();
-    // };
+    $scope.txt_subjectNameChange = function($event, $isolateScope, newVal, oldVal) {
+        debugger;
+        // var subjectData = $scope.Widgets.txt_subjectName.datavalue;
+        // $scope.Widgets.txt_subjectName.datavalue = subjectData.toUpperCase();
+    };
 
     $scope.button_addsubjectClick = function($event, $isolateScope) {
         $scope.Widgets.composite_subjectName.show = true;
         $scope.Widgets.button_addNew.show = true;
+        $scope.Widgets.button_cancel.show = true;
         $scope.Widgets.button_addsubject.show = false;
     };
     $scope.txt_subjectNameKeydown = function($event, $isolateScope) {
@@ -32,15 +33,29 @@ Application.$controller("Subject_DetailsPageController", ["$scope", function($sc
             $scope.Widgets.txt_subjectName.datavalue = '';
             $scope.Widgets.composite_subjectName.show = false;
             $scope.Widgets.button_addNew.show = false;
+            $scope.Widgets.button_cancel.show = false;
             $scope.Widgets.button_addsubject.show = true;
 
         }
     };
 
+    $scope.button_cancelClick = function($event, $isolateScope) {
+        $scope.Widgets.composite_subjectName.show = false;
+        $scope.Widgets.button_addNew.show = false;
+        $scope.Widgets.button_cancel.show = false;
+        $scope.Widgets.button_addsubject.show = true;
+        $scope.Widgets.txt_subjectName.datavalue = '';
 
-    $scope.txt_subjectNameKeyup = function($event, $isolateScope) {
-        var subjectData = $scope.Widgets.txt_subjectName.datavalue;
-        $scope.Widgets.txt_subjectName.datavalue = subjectData.toUpperCase();
+    };
+
+    $scope.button_addNewClick = function($event, $isolateScope) {
+        debugger;
+        $scope.Variables.LV_InsertSubjectDetails.createRecord();
+        $scope.Widgets.txt_subjectName.datavalue = '';
+        $scope.Widgets.composite_subjectName.show = false;
+        $scope.Widgets.button_addNew.show = false;
+        $scope.Widgets.button_cancel.show = false;
+        $scope.Widgets.button_addsubject.show = true;
     };
 
 }]);

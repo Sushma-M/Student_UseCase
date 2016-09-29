@@ -84,6 +84,14 @@ public class GradeDetailsController {
         return deletedGradeDetails != null;
     }
 
+    @RequestMapping(value = "/grade/{grade}", method = RequestMethod.GET)
+    @ApiOperation(value = "Returns the matching GradeDetails with given unique key values.")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public GradeDetails getByGrade(@PathVariable("grade") String grade) {
+        LOGGER.debug("Getting GradeDetails with uniques key Grade");
+        return gradeDetailsService.getByGrade(grade);
+    }
+
     /**
      * @deprecated Use {@link #findGradeDetails(String, Pageable)} instead.
      */

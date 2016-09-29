@@ -139,7 +139,7 @@
     "category" : "wm.NotificationVariable",
     "dataBinding" : [ {
       "target" : "text",
-      "value" : "Do you want to delete the record",
+      "value" : "Do you want to delete the record?",
       "type" : "string"
     }, {
       "target" : "title",
