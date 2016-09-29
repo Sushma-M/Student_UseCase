@@ -76,6 +76,7 @@ Application.$controller("liveform_gradeDetailsController", ["$scope",
     function($scope) {
         "use strict";
         $scope.ctrlScope = $scope;
+
         $scope.minValueChange = function($event, $isolateScope, newVal, oldVal) {
             debugger;
             var gradeData = $scope.Variables.School_DB_GradeDetailsData.dataSet.data;
