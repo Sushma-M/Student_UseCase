@@ -1,0 +1,36 @@
+<wm-partial data-ng-controller="Grade_DetailsPageController" name="partial1">
+    <wm-livegrid formlayout="inline" name="livegrid_gradeDetails">
+        <wm-grid gridfirstrowselect="true" editmode="dialog" title="Grade_details List" dataset="bind:Variables.School_DB_GradeDetailsData.dataSet" navigation="None" name="grid_gradeDetails">
+            <wm-grid-column binding="grade" caption="Grade" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+            <wm-grid-column binding="rowOperations" caption="Actions" type="custom" width="120px" readonly="true" edit-widget-type="text" sortable="false" searchable="false" show="true"></wm-grid-column>
+            <wm-grid-column binding="customField" caption="Grade Range" type="custom" edit-widget-type="text" searchable="false" show="true" readonly="false">{{row.minValue+'% - '+row.maxValue+'%'}}</wm-grid-column>
+            <wm-grid-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" shortcutkey="" disabled="false"></wm-grid-action>
+            <wm-grid-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" disabled="false"></wm-grid-row-action>
+            <wm-grid-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" disabled="false"></wm-grid-row-action>
+        </wm-grid>
+        <wm-liveform novalidate="false" title="GRADE DETAILS" formlayout="inline" iconclass="wi wi-edit" dataset="bind:Variables.School_DB_GradeDetailsData.dataSet" captionalign="left" captionposition="top" name="liveform_gradeDetails" on-beforeservicecall="liveform_gradeDetailsBeforeservicecall($event, $operation, $data)">
+            <wm-layoutgrid name="layoutgrid2" columns="2">
+                <wm-gridrow name="gridrow16">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn27">
+                        <wm-form-field name="grade" displayname="Grade" show="true" primary-key="false" generator="assigned" key="grade" type="string" is-related="false" pc-display="true" mobile-display="true" widget="text" maxchars="2"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn26">
+                        <wm-form-field name="gradeId" displayname="Grade Id" show="false" primary-key="true" generator="identity" key="gradeId" type="integer" is-related="false" readonly="readonly" required="required" pc-display="true" mobile-display="true"
+                        step="0" widget="number"></wm-form-field>
+                        <wm-form-field name="minValue" displayname="Min Value" show="true" primary-key="false" generator="assigned" key="minValue" type="integer" is-related="false" pc-display="true" mobile-display="true" step="0" widget="number"
+                        on-change="minValueChange($event, $scope, newVal, oldVal)" required="false"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow17">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn28">
+                        <wm-form-field name="maxValue" displayname="Max Value" show="true" primary-key="false" generator="assigned" key="maxValue" type="integer" is-related="false" pc-display="true" mobile-display="true" step="0" widget="number" on-change="maxValueChange($event, $scope, newVal, oldVal)"
+                        required="false"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn29"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-form-action key="cancel" class="form-cancel btn-secondary" iconclass="wi wi-cancel" action="cancel()" display-name="Cancel" show="true" type="button" update-mode="true" shortcutkey=""></wm-form-action>
+            <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" action="" display-name="Save" show="true" type="submit" update-mode="true" shortcutkey=""></wm-form-action>
+        </wm-liveform>
+    </wm-livegrid>
+</wm-partial>

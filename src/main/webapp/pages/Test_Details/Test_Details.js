@@ -1,4 +1,4 @@
-Application.$controller("fgvbsxgbPageController", ["$scope", function ($scope) {
+Application.$controller("Test_DetailsPageController", ["$scope", function ($scope) {
     "use strict";
 
     /* perform any action on widgets/variables within this block */
@@ -17,7 +17,7 @@ Application.$controller("fgvbsxgbPageController", ["$scope", function ($scope) {
 }]);
 
 
-Application.$controller("grid1Controller", ["$scope",
+Application.$controller("grid_testDetailsController", ["$scope",
 	function($scope) {
 		"use strict";
 		$scope.ctrlScope = $scope;

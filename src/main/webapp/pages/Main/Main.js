@@ -40,29 +40,9 @@ Application.$controller("grid_testDetailsController", ["$scope",
     }
 ]);
 
-Application.$controller("grid_academicYearController", ["$scope",
-    function($scope) {
-        "use strict";
-        $scope.ctrlScope = $scope;
-    }
-]);
 
-Application.$controller("liveform_academicYearController", ["$scope",
-    function($scope) {
-        "use strict";
-        $scope.ctrlScope = $scope;
 
-        $scope.startYearChange = function($event, $isolateScope, newVal, oldVal) {
-            //debugger;
-            var acStartYear = $scope.Widgets.startYear.datavalue;
-            $scope.Widgets.endYear.datavalue = acStartYear + 1;
-            var acEndYear = $scope.Widgets.endYear.datavalue;
-            var s1 = acStartYear.toString();
-            var s2 = acEndYear.toString();
-            $scope.Widgets.academicYear.datavalue = s1 + '-' + s2;
-        };
-    }
-]);
+
 
 
 Application.$controller("grid_standardDetailsController", ["$scope",

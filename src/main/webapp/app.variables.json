@@ -34,50 +34,6 @@
     "dataSet" : [ ],
     "pageTransitions" : "none"
   },
-  "goToPage_Page1" : {
-    "_id" : "wm-goToPage_Page1-wm.NavigationVariable-1474874964416",
-    "name" : "goToPage_Page1",
-    "owner" : "App",
-    "category" : "wm.NavigationVariable",
-    "dataBinding" : [ ],
-    "operation" : "gotoPage",
-    "pageName" : "Page1",
-    "dataSet" : [ ],
-    "pageTransitions" : "none"
-  },
-  "goToPage_Page2" : {
-    "_id" : "wm-goToPage_Page2-wm.NavigationVariable-1474887891340",
-    "name" : "goToPage_Page2",
-    "owner" : "App",
-    "category" : "wm.NavigationVariable",
-    "dataBinding" : [ ],
-    "operation" : "gotoPage",
-    "pageName" : "Page2",
-    "dataSet" : [ ],
-    "pageTransitions" : "none"
-  },
-  "goToPage_page4" : {
-    "_id" : "wm-goToPage_page4-wm.NavigationVariable-1474955297430",
-    "name" : "goToPage_page4",
-    "owner" : "App",
-    "category" : "wm.NavigationVariable",
-    "dataBinding" : [ ],
-    "operation" : "gotoPage",
-    "pageName" : "page4",
-    "dataSet" : [ ],
-    "pageTransitions" : "none"
-  },
-  "goToPage_PAGE5" : {
-    "_id" : "wm-goToPage_PAGE5-wm.NavigationVariable-1474968537660",
-    "name" : "goToPage_PAGE5",
-    "owner" : "App",
-    "category" : "wm.NavigationVariable",
-    "dataBinding" : [ ],
-    "operation" : "gotoPage",
-    "pageName" : "PAGE5",
-    "dataSet" : [ ],
-    "pageTransitions" : "none"
-  },
   "goToPage_StudentDetails" : {
     "_id" : "wm-goToPage_StudentDetails-wm.NavigationVariable-1474525812143",
     "name" : "goToPage_StudentDetails",
@@ -150,29 +106,6 @@
     "transformationRequired" : false,
     "redirectTo" : "Login",
     "useDefaultSuccessHandler" : true
-  },
-  "StVar_LeftNav" : {
-    "_id" : "wm-StVar_LeftNav-wm.Variable-1474905657888",
-    "name" : "StVar_LeftNav",
-    "owner" : "App",
-    "category" : "wm.Variable",
-    "dataBinding" : [ ],
-    "dataSet" : [ {
-      "label" : "Home",
-      "icon" : "glyphicon glyphicon-home",
-      "link" : "#/Main"
-    }, {
-      "label" : "Page1",
-      "icon" : "wi wi-ellipsis-v",
-      "link" : "#/partials_StandardDetails"
-    }, {
-      "label" : "Page2",
-      "icon" : "glyphicon glyphicon-chevron-right",
-      "link" : "#/Page2"
-    } ],
-    "type" : "string",
-    "isList" : true,
-    "saveInPhonegap" : false
   },
   "supportedLocale" : {
     "_id" : "wm-wm.Variable1402640443182",

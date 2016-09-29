@@ -1,9 +1,0 @@
-<wm-partial data-ng-controller="fgvbsxgbPageController" name="partial1">
-    <wm-grid title="Academics List" dataset="bind:Variables.StudentPortal_DBAcademicsData.dataSet" navigation="Basic" name="grid1" filtermode="multicolumn">
-        <wm-grid-column binding="academicYear" caption="Academic Year" type="date" primary-key="true" generator="assigned" readonly="true" edit-widget-type="date" show="true"></wm-grid-column>
-        <wm-grid-column binding="classRoom" caption="Class Room" type="string" generator="assigned" readonly="true" edit-widget-type="text" show="true"></wm-grid-column>
-        <wm-grid-column binding="classTeacher" caption="Class Teacher" type="string" generator="assigned" readonly="true" edit-widget-type="text" show="true"></wm-grid-column>
-        <wm-grid-column binding="standardDetails.standardId" caption="Standard Id" type="string" primary-key="true" generator="assigned" readonly="true" edit-widget-type="text" show="true" related-entity-name="StandardDetails"></wm-grid-column>
-        <wm-grid-column binding="standardDetails.standardName" caption="Standard Name" type="string" generator="assigned" readonly="true" edit-widget-type="text" show="true" related-entity-name="StandardDetails"></wm-grid-column>
-    </wm-grid>
-</wm-partial>

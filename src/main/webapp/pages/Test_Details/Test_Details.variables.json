@@ -1,13 +1,13 @@
 {
-  "StandardDetailsData" : {
-    "_id" : "wm-StandardDetailsData-wm.LiveVariable-1474905790564",
-    "name" : "StandardDetailsData",
+  "School_DB_TestDetailsData" : {
+    "_id" : "wm-School_DB_TestDetailsData-wm.LiveVariable-1475132378225",
+    "name" : "School_DB_TestDetailsData",
     "owner" : "Page",
     "category" : "wm.LiveVariable",
     "dataBinding" : [ ],
     "operation" : "read",
     "dataSet" : [ ],
-    "type" : "StandardDetails",
+    "type" : "TestDetails",
     "isList" : false,
     "saveInPhonegap" : false,
     "maxResults" : 20,
@@ -16,45 +16,47 @@
     "startUpdate" : true,
     "autoUpdate" : true,
     "transformationRequired" : false,
-    "liveSource" : "StudentPortal_DB",
+    "liveSource" : "School_DB",
     "ignoreCase" : false,
     "matchMode" : "start",
     "propertiesMap" : {
       "columns" : [ {
-        "fieldName" : "standardId",
+        "fieldName" : "testId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "TEST_ID",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "testName",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "STANDARD_ID",
-        "isPrimaryKey" : true,
+        "columnName" : "TEST_NAME",
+        "isPrimaryKey" : false,
         "notNull" : true,
         "length" : 255,
         "precision" : 19,
         "generator" : "assigned",
         "isRelated" : false,
-        "scale" : 0
-      }, {
-        "fieldName" : "standardName",
-        "type" : "string",
-        "fullyQualifiedType" : "string",
-        "columnName" : "STANDARD_NAME",
-        "isPrimaryKey" : false,
-        "notNull" : false,
-        "length" : 255,
-        "precision" : 19,
-        "generator" : "assigned",
-        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       } ],
-      "entityName" : "StandardDetails",
-      "fullyQualifiedName" : "com.student_usecase.studentportal_db.StandardDetails",
+      "entityName" : "TestDetails",
+      "fullyQualifiedName" : "com.student_usecase.school_db.TestDetails",
       "tableType" : "TABLE",
-      "primaryFields" : [ "standardId" ]
+      "primaryFields" : [ "testId" ]
     },
-    "tableName" : "STANDARD_DETAILS",
+    "tableName" : "TEST_DETAILS",
     "tableType" : "TABLE",
     "properties" : [ ],
     "relatedTables" : [ ],
     "filterFields" : { },
-    "package" : "com.student_usecase.studentportal_db.StandardDetails"
+    "package" : "com.student_usecase.school_db.TestDetails"
   }
 }

@@ -1,5 +1,13 @@
 [ {
+  "name" : "Academic_Details",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
   "name" : "Common",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "Grade_Details",
   "type" : "PARTIAL",
   "params" : [ ]
 }, {
@@ -15,23 +23,19 @@
   "type" : "PAGE",
   "params" : [ ]
 }, {
-  "name" : "PAGE5",
-  "type" : "PAGE",
-  "params" : [ ]
-}, {
-  "name" : "Page1",
-  "type" : "PAGE",
-  "params" : [ ]
-}, {
-  "name" : "Page2",
-  "type" : "PAGE",
+  "name" : "Standard_Details",
+  "type" : "PARTIAL",
   "params" : [ ]
 }, {
   "name" : "StudentDetails",
   "type" : "PAGE",
   "params" : [ ]
 }, {
-  "name" : "fgvbsxgb",
+  "name" : "Subject_Details",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "Test_Details",
   "type" : "PARTIAL",
   "params" : [ ]
 }, {
@@ -45,14 +49,6 @@
 }, {
   "name" : "leftnav",
   "type" : "LEFTNAV",
-  "params" : [ ]
-}, {
-  "name" : "page4",
-  "type" : "PAGE",
-  "params" : [ ]
-}, {
-  "name" : "partials_StandardDetails",
-  "type" : "PARTIAL",
   "params" : [ ]
 }, {
   "name" : "rightnav",
