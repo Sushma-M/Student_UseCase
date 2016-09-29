@@ -123,7 +123,7 @@ Application.$controller("dialog4Controller", ["$scope",
 
 
 
-Application.$controller("liveform4Controller", ["$scope",
+Application.$controller("liveform_academicSubjectsController", ["$scope",
     function($scope) {
         "use strict";
         $scope.ctrlScope = $scope;

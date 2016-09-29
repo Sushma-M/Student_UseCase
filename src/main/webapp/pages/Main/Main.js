@@ -13,14 +13,6 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
          * '$scope.Widgets.username.datavalue'
          */
     };
-    // $scope.txt_subjectNameChange = function($event, $isolateScope, newVal, oldVal) {
-    //     debugger;
-    //     var subName = $scope.Widgets.txt_subjectName.datavalue;
-    //     $scope.Variables.LV_InsertSubjectDetails.setInput('subjectName', subName);
-    //     $scope.Variables.LV_InsertSubjectDetails.createRecord();
-    //     $scope.Variables.School_DB_SubjectDetailsData.listRecords();
-    //     $scope.Widgets.composite_subjectName.show = false;
-    // };
 
 
     $scope.button_addsubjectClick = function($event, $isolateScope) {
@@ -38,8 +30,6 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
         $scope.Widgets.button_addNew.show = false;
         $scope.Widgets.button_addsubject.show = true;
     };
-
-
 }]);
 
 
@@ -71,7 +61,6 @@ Application.$controller("liveform_academicYearController", ["$scope",
             var s2 = acEndYear.toString();
             $scope.Widgets.academicYear.datavalue = s1 + '-' + s2;
         };
-
     }
 ]);
 
@@ -108,13 +97,15 @@ Application.$controller("liveform_gradeDetailsController", ["$scope",
             console.log(gradeData);
             console.log(len);
             for (var i = 0; i < len; i++) {
-                var maxRangeValue = gradeData[i].minValue - 1;
-                var gradeLevelMinValue = gradeData[i].minValue;
-                if ($scope.Widgets.minValue.datavalue < maxRangeValue && $scope.Widgets.minValue.datavalue < gradeLevelMinValue) {
-                    continue;
-                } else {
+                var gradeMinValue = gradeData[i].minValue;
+                var gradeMaxValue = gradeData[i].maxValue;
+                if ($scope.Widgets.minValue.datavalue >= gradeMinValue && $scope.Widgets.minValue.datavalue <= gradeMaxValue) {
                     $scope.Widgets.minValue.setValidationMessage('Entered Value ' + $scope.Widgets.minValue.datavalue + ' overlaps in Grade: ' + gradeData[i].grade);
+                    $scope.Widgets.save.disabled = true;
                     break;
+                } else {
+                    $scope.Widgets.save.disabled = false;
+                    continue;
                 }
             }
             // gradeData.forEach(function(gradeLevel) {
@@ -137,16 +128,39 @@ Application.$controller("liveform_gradeDetailsController", ["$scope",
         };
 
         $scope.maxValueChange = function($event, $isolateScope, newVal, oldVal) {
+            debugger;
+            // var gradeData1 = $scope.Variables.School_DB_GradeDetailsData.dataSet.data,
+            //     maxVal = _.max(_.map(gradeData1, function(obj) {
+            //         return obj.maxValue
+            //     })),
+            //     minVal = _.min(_.map(gradeData1, function(obj) {
+            //         return obj.minValue
+            //     }));
+            // debugger;
+            // $scope.Widgets.maxValue.minvalue = minVal;
+            // $scope.Widgets.maxValue.maxvalue = maxVal;
+            /*                maxInput = $scope.Widgets.maxValue.datavalue;
+                        if (maxInput > minVal && maxInput <= maxVal) {
+                            $scope.Widgets.maxValue.setValidationMessage('Entered Value ' + maxInput + ' overlaps in Grade');
+                        }*/
             var gradeData1 = $scope.Variables.School_DB_GradeDetailsData.dataSet.data;
             var len1 = gradeData1.length;
+            console.log(gradeData1);
+            console.log(len1);
             for (var j = 0; j < len1; j++) {
-                var maxRangeValue1 = gradeData1[j].minValue - 1;
-                var gradeLevelMinValue1 = gradeData1[j].minValue;
-                if ($scope.Widgets.maxValue.datavalue <= maxRangeValue1 && $scope.Widgets.maxValue.datavalue < gradeLevelMinValue1) {
-                    continue;
-                } else {
-                    $scope.Widgets.minValue.setValidationMessage('Entered Value ' + $scope.Widgets.maxValue.datavalue + ' overlaps in Grade: ' + gradeData[i].grade);
+                var gradeMinValue1 = gradeData1[j].minValue;
+                var gradeMaxValue1 = gradeData1[j].maxValue;
+                if ($scope.Widgets.maxValue.datavalue >= gradeMinValue1 && $scope.Widgets.maxValue.datavalue <= gradeMaxValue1) {
+                    $scope.Widgets.maxValue.setValidationMessage('Entered Value ' + $scope.Widgets.maxValue.datavalue + ' overlaps in Grade: ' + gradeData1[j].grade);
+                    $scope.Widgets.save.disabled = true;
                     break;
+                } else if ($scope.Widgets.maxValue.datavalue <= $scope.Widgets.minValue.datavalue) {
+                    $scope.Widgets.maxValue.setValidationMessage('Entered Value ' + $scope.Widgets.maxValue.datavalue + ' is less than or Equal to ' + $scope.Widgets.minValue.datavalue);
+                    $scope.Widgets.save.disabled = true;
+                    break;
+                } else {
+                    $scope.Widgets.save.disabled = false;
+                    continue;
                 }
             }
         };

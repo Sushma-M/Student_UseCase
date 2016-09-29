@@ -295,12 +295,12 @@
     <wm-view class="dialog-view" name="view4">
         <wm-dialog dialogtype="design-dialog" modal="true" title="Add Academic Subjects" iconclass="wi wi-edit" name="dialog4">
             <wm-dialogactions name="dialogactions4" show="false"></wm-dialogactions>
-            <wm-liveform novalidate="false" title="" iconclass="" defaultmode="Edit" dataset="bind:Variables.School_DBAcademicSubjectsData.dataSet" captionalign="left" captionposition="left" name="liveform4">
+            <wm-liveform novalidate="false" title="" iconclass="" defaultmode="Edit" dataset="bind:Variables.School_DBAcademicSubjectsData.dataSet" captionalign="left" captionposition="left" name="liveform_academicSubjects">
                 <wm-layoutgrid columns="1" name="layoutgrid12_2">
                     <wm-gridrow name="gridrow29_2">
                         <wm-gridcolumn columnwidth="12" name="gridcolumn55">
                             <wm-form-field name="academics" displayname="Academics" show="true" primary-key="true" generator="assigned" key="academics" type="list" is-related="true" required="required" widget="select" maxchars="255" placeholder="Select value"
-                            displayexpression="classTeacher + '  ' + classRoom"></wm-form-field>
+                            displayexpression="academicYearByAcademicYear.academicYear + '  (' + standardDetails.standardCode+')'"></wm-form-field>
                         </wm-gridcolumn>
                     </wm-gridrow>
                     <wm-gridrow name="gridrow30_2">
@@ -316,7 +316,7 @@
                     </wm-gridrow>
                 </wm-layoutgrid>
                 <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" type="submit" update-mode="true"></wm-form-action>
-                <wm-form-action key="custom" display-name="Close" show="true" type="button" update-mode="true" shortcutkey="" action="Widgets.dialog4.close()"></wm-form-action>
+                <wm-form-action key="custom" display-name="Close" show="true" class="" title="Close" action="Widgets.dialog4.close()" shortcutkey="" disabled="false" type="button" update-mode="true"></wm-form-action>
             </wm-liveform>
         </wm-dialog>
     </wm-view>
